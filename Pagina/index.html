@@ -5,12 +5,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cand's Eventos | Salón de fiestas en Ituzaingó</title>
 <meta name="description" content="Salón de fiestas en Ituzaingó: gastronomía completa, DJ, iluminación, ambientación y organización de principio a fin.">
+<link rel="canonical" href="https://candsevent-pagina.vercel.app/">
+<meta name="theme-color" content="#16111f">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316111f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='42' text-anchor='middle' fill='%23e9cf8e'%3EC%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Cand's Eventos">
+<meta property="og:title" content="Cand's Eventos | Salón de fiestas en Ituzaingó">
+<meta property="og:description" content="Gastronomía completa, DJ, iluminación y ambientación. Consultá tu fecha.">
+<meta property="og:url" content="https://candsevent-pagina.vercel.app/">
+<meta property="og:image" content="https://candsevent-pagina.vercel.app/salon1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "EventVenue"],
+  "name": "Cand's Eventos",
+  "description": "Salón de fiestas en Ituzaingó con servicio gastronómico completo, DJ, iluminación, ambientación y organización de principio a fin.",
+  "url": "https://candsevent-pagina.vercel.app/",
+  "image": "https://candsevent-pagina.vercel.app/salon1.webp",
+  "telephone": "+5491133143561",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Turquía 2689",
+    "addressLocality": "Ituzaingó",
+    "addressRegion": "Provincia de Buenos Aires",
+    "postalCode": "B1714",
+    "addressCountry": "AR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -34.653281, "longitude": -58.6951358 },
+  "sameAs": ["https://www.instagram.com/candseventos"]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f2ea; --bg2:#efe7da; --ink:#1d1a24; --muted:#5d5766; --gold:#8f6a1f; --gold-soft:#b8913f; --line:rgba(143,106,31,.35); --card:#fffaf1;
+  --bg:#f7f2ea; --bg2:#efe7da; --ink:#1d1a24; --muted:#5d5766; --gold:#7a5812; --gold-soft:#b8913f; --line:rgba(143,106,31,.35); --card:#fffaf1;
   --hero-ink:#f6efe2;
   box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
   --serif:'Playfair Display',Georgia,'Times New Roman',serif; --sans:'Nunito Sans','Helvetica Neue',Arial,sans-serif;
@@ -109,13 +141,35 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
 .wa{position:fixed;right:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:30;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#f1dc9f,#c9a24e);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);text-decoration:none;color:#1a1409}
 .wa svg{width:28px;height:28px}
 
+/* Galerías */
 .gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:260px;gap:14px;margin-top:44px}
-.gal figure{position:relative;overflow:hidden;border:1px solid var(--line);background:var(--card)}
+.gal figure{position:relative;z-index:1;overflow:hidden;border:1px solid var(--line);background:var(--card);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,z-index 0s linear .5s;
+  -webkit-tap-highlight-color:transparent}
 .gal figure.big{grid-column:span 2;grid-row:span 2}
-.gal img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .6s}
-.gal figure:hover img{transform:scale(1.05)}
+.gal img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;
+  -webkit-touch-callout:none;-webkit-user-drag:none;user-select:none}
+/* Efecto "sobresale": se activa por JavaScript (1.5 s en PC, mantener apretado en celular) */
+.gal figure.pop{transform:scale(1.20);z-index:5;box-shadow:0 22px 50px rgba(0,0,0,.45);
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,z-index 0s}
+.gal figure.big.pop{transform:scale(1.04)}
 .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 12px;font-family:var(--serif);font-size:20px;color:#f6efe2;background:linear-gradient(transparent,rgba(14,12,20,.8))}
 @media (max-width:700px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px}.gal figure.big{grid-column:span 2;grid-row:span 2}.gal figure:last-child{grid-column:span 2}}
+
+/* Galería del salón: grilla de 6 columnas para que disco y torta tengan proporción natural */
+#salon .gal{grid-template-columns:repeat(6,1fr);grid-template-rows:260px 260px 340px}
+#salon .gal figure{grid-column:span 2}
+#salon .gal figure.big{grid-column:span 4;grid-row:span 2}
+#salon .gal figure.wide{grid-column:span 3}
+/* disco.webp: sin deformarse. Si querés ver la foto completa (con bordes), cambiá cover por contain */
+.gal figure.disco img{object-fit:cover;object-position:center}
+@media (max-width:700px){
+  #salon .gal{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:170px}
+  #salon .gal figure{grid-column:span 1}
+  #salon .gal figure.big{grid-column:span 2;grid-row:span 2}
+  #salon .gal figure.wide{grid-column:span 2;grid-row:span 2}
+}
+
 /* Servicios: 3 arriba y 2 abajo centradas */
 #servicio .grid{grid-template-columns:repeat(6,1fr)}
 #servicio .card{grid-column:span 2}
@@ -167,7 +221,7 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
 .lq-note{text-align:center;font-size:13px;color:#9f97aa;margin-top:12px}
 @media (max-width:900px){.lq-grid{grid-template-columns:1fr;gap:36px}}
 @media (max-width:560px){.lq-card{padding:28px 20px}.lq-row{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.orb,.beam,.sp{animation:none}.sp{opacity:.5}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){.orb,.beam,.sp{animation:none}.sp{opacity:.5}html{scroll-behavior:auto}.gal figure,.gal figure.pop{transition:none}}
 @media (max-width:600px){section{padding:72px 0}.o1,.o3{display:none}}
 </style>
 </head>
@@ -191,7 +245,7 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
     <p class="sub">Tu fiesta, una noche inolvidable</p>
     <p class="loc">Salón de fiestas en Ituzaingó, Buenos Aires</p>
     <div class="btns">
-      <a class="btn fill" href="https://wa.me/5491133143561?text=Hola%2C%20quiero%20consultar%20por%20una%20fecha%20en%20Cand's%20Eventos" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+      <a class="btn fill" href="#cotizar">Consultar fecha</a>
       <a class="btn line" href="#servicio">Qué incluye</a>
     </div>
   </div>
@@ -270,12 +324,11 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
     <h2>Conocé el salón</h2>
     <p class="lead">Un espacio equipado, climatizado y decorado para que tu fiesta sea el centro de la noche.</p>
     <div class="gal">
-      <figure class="big"><img src="salon1.jpg" alt="Salón de fiestas Cand's Eventos por dentro" loading="lazy"></figure>
-      <figure><img src="salon2.jpg" alt="Vista del salón con iluminación y ambientación" loading="lazy"></figure>
-      <figure><img src="salon3.jpg" alt="Mesas del salón de eventos" loading="lazy"></figure>
-      <figure><img src="torta.jpg" alt="Mesa principal decorada con torta" loading="lazy"></figure>
-      <figure><img src="disco.jpg" alt="Centro del salón, la pista de baile" loading="lazy"></figure>
-      <figure><img src="fuera.jpg" alt="Frente del salón Cand's Eventos en Ituzaingó" loading="lazy"></figure>
+      <figure class="big"><img src="salon1.webp" alt="Salón de fiestas Cand's Eventos por dentro" loading="lazy"></figure>
+      <figure><img src="salon2.webp" alt="Vista del salón con iluminación y ambientación" loading="lazy"></figure>
+      <figure><img src="salon3.webp" alt="Mesas del salón de eventos" loading="lazy"></figure>
+      <figure class="wide"><img src="torta.webp" alt="Mesa principal decorada con torta" loading="lazy"></figure>
+      <figure class="wide disco"><img src="disco.webp" alt="Centro del salón, la pista de baile" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -285,12 +338,12 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
     <h2>Una mesa para recordar</h2>
     <p class="lead">Recepción, picadas y mesa dulce: todo fresco, abundante y con una presentación cuidada.</p>
     <div class="gal">
-      <figure class="big"><img src="mesadulce.jpg" alt="Mesa dulce del salón" loading="lazy"></figure>
-      <figure><img src="picada.jpg" alt="Picada de recepción" loading="lazy"></figure>
-      <figure><img src="picada2.jpg" alt="Picada de recepción" loading="lazy"></figure>
-      <figure><img src="picada3.jpg" alt="Catering de recepción" loading="lazy"></figure>
-      <figure><img src="picada4.jpg" alt="Catering de recepción" loading="lazy"></figure>
-      <figure><img src="picada5.jpg" alt="Catering de recepción" loading="lazy"></figure>
+      <figure class="big"><img src="mesadulce.webp" alt="Mesa dulce del salón" loading="lazy"></figure>
+      <figure><img src="picada.webp" alt="Picada de recepción" loading="lazy"></figure>
+      <figure><img src="picada2.webp" alt="Picada de recepción" loading="lazy"></figure>
+      <figure><img src="picada3.webp" alt="Catering de recepción" loading="lazy"></figure>
+      <figure><img src="picada4.webp" alt="Catering de recepción" loading="lazy"></figure>
+      <figure><img src="picada5.webp" alt="Catering de recepción" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -422,7 +475,22 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
   </div>
 </section>
 
-<footer class="f">© Cand's Eventos. Salón de fiestas en Ituzaingó.</footer>
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="rule"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></svg></div>
+    <h2>Visitanos o escribinos</h2>
+    <div class="cgrid">
+      <a href="tel:+5491133143561"><small>Llamanos</small><strong>11 3314-3561</strong></a>
+      <a href="https://www.instagram.com/candseventos" target="_blank" rel="noopener"><small>Instagram</small><strong>@candseventos</strong></a>
+      <a href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.655907,-58.699949,16z/data=!4m6!3m5!1s0x95bcbf9c3709fcad:0xe8053f97f3f141b1!8m2!3d-34.653281!4d-58.6951358!16s%2Fg%2F11cmmzvxqy?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener"><small>Cómo llegar</small><strong>Turquía 2689, Ituzaingó</strong></a>
+    </div>
+    <p style="color:var(--muted);font-size:15px">Turquía 2689, B1714 Ituzaingó, Provincia de Buenos Aires</p>
+  </div>
+</section>
+
+<footer class="f">
+  © Cand's Eventos · Turquía 2689, Ituzaingó
+</footer>
 
 <a class="wa" href="https://wa.me/5491133143561" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
@@ -483,6 +551,66 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
     s.style.cssText = 'left:' + (Math.random() * 100) + '%;top:' + (Math.random() * 100) + '%;width:' + size + 'px;height:' + size + 'px;--d:' + (3 + Math.random() * 4) + 's;--t:' + (Math.random() * 6) + 's';
     box.appendChild(s);
   }
+})();
+
+// Fotos que sobresalen: 0.6 s con el cursor en PC, mantener apretado en celular
+(function(){
+  var HOVER_DELAY = 600;  // PC: milisegundos con el cursor quieto encima
+  var HOLD_DELAY  = 350;  // Celular: milisegundos manteniendo apretado
+  var MOVE_TOL    = 10;   // Celular: si el dedo se mueve más que esto (scroll), se cancela
+
+  var figs = document.querySelectorAll('.gal figure');
+  var lastType = 'mouse';
+
+  figs.forEach(function(fig){
+    var timer = null, sx = 0, sy = 0;
+
+    function on(){ fig.classList.add('pop'); }
+    function off(){ clearTimeout(timer); timer = null; fig.classList.remove('pop'); }
+
+    // PC: el efecto aparece solo si el cursor se queda quieto el tiempo indicado
+    fig.addEventListener('pointerenter', function(e){
+      lastType = e.pointerType;
+      if(e.pointerType !== 'mouse') return;
+      clearTimeout(timer);
+      timer = setTimeout(on, HOVER_DELAY);
+    });
+    fig.addEventListener('pointerleave', function(e){
+      if(e.pointerType === 'mouse') off();
+    });
+
+    // Celular: el efecto aparece al mantener apretado
+    fig.addEventListener('pointerdown', function(e){
+      lastType = e.pointerType;
+      if(e.pointerType === 'mouse') return;
+      sx = e.clientX; sy = e.clientY;
+      clearTimeout(timer);
+      timer = setTimeout(on, HOLD_DELAY);
+    });
+    fig.addEventListener('pointermove', function(e){
+      if(e.pointerType === 'mouse' || !timer) return;
+      if(Math.abs(e.clientX - sx) > MOVE_TOL || Math.abs(e.clientY - sy) > MOVE_TOL){
+        clearTimeout(timer); timer = null;
+      }
+    });
+    ['pointerup','pointercancel'].forEach(function(ev){
+      fig.addEventListener(ev, function(e){
+        if(e.pointerType !== 'mouse') off();
+      });
+    });
+
+    // Evita el menú de "guardar imagen" al mantener apretado en el celular
+    fig.addEventListener('contextmenu', function(e){
+      if(lastType !== 'mouse') e.preventDefault();
+    });
+  });
+
+  // Tocar fuera de una foto la devuelve a la normalidad
+  document.addEventListener('pointerdown', function(e){
+    figs.forEach(function(f){
+      if(!f.contains(e.target)) f.classList.remove('pop');
+    });
+  });
 })();
 </script>
 </body>
