@@ -1,21 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Cand's Eventos | Salón de fiestas en Ituzaingó</title>
-<meta name="description" content="Salón de fiestas en Ituzaingó: gastronomía completa, DJ, iluminación, ambientación y organización de principio a fin.">
+<meta name="description" content="Salón de fiestas en Ituzaingó. Gastronomía completa, DJ y luces, ambientación y coordinación de principio a fin. Consultá la disponibilidad de tu fecha.">
 <link rel="canonical" href="https://candsevent-pagina.vercel.app/">
-<meta name="theme-color" content="#16111f">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316111f'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='42' text-anchor='middle' fill='%23e9cf8e'%3EC%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#07050c">
+<meta name="color-scheme" content="dark">
+
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <meta property="og:site_name" content="Cand's Eventos">
-<meta property="og:title" content="Cand's Eventos | Salón de fiestas en Ituzaingó">
-<meta property="og:description" content="Gastronomía completa, DJ, iluminación y ambientación. Consultá tu fecha.">
+<meta property="og:title" content="Cand's Eventos | Tu nombre en luces">
+<meta property="og:description" content="Quince, casamientos y cumpleaños en Ituzaingó. Todo resuelto, de la recepción al último tema.">
 <meta property="og:url" content="https://candsevent-pagina.vercel.app/">
-<meta property="og:image" content="https://candsevent-pagina.vercel.app/salon1.webp">
+<meta property="og:image" content="https://candsevent-pagina.vercel.app/salon2.webp">
 <meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='12'%20fill='%2307050c'/%3E%3Ctext%20x='32'%20y='45'%20font-family='Georgia,serif'%20font-size='40'%20text-anchor='middle'%20fill='%23d9b877'%3EC%3C/text%3E%3C/svg%3E">
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,7 +27,7 @@
   "name": "Cand's Eventos",
   "description": "Salón de fiestas en Ituzaingó con servicio gastronómico completo, DJ, iluminación, ambientación y organización de principio a fin.",
   "url": "https://candsevent-pagina.vercel.app/",
-  "image": "https://candsevent-pagina.vercel.app/salon1.webp",
+  "image": "https://candsevent-pagina.vercel.app/salon2.webp",
   "telephone": "+5491133143561",
   "address": {
     "@type": "PostalAddress",
@@ -37,398 +41,1198 @@
   "sameAs": ["https://www.instagram.com/candseventos"]
 }
 </script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+
+<script>document.documentElement.classList.add('js');</script>
+
 <style>
+/* ============================================================
+   1. BASE
+   ============================================================ */
 :root{
-  --bg:#f7f2ea; --bg2:#efe7da; --ink:#1d1a24; --muted:#5d5766; --gold:#7a5812; --gold-soft:#b8913f; --line:rgba(143,106,31,.35); --card:#fffaf1;
-  --hero-ink:#f6efe2;
-  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
-  --serif:'Playfair Display',Georgia,'Times New Roman',serif; --sans:'Nunito Sans','Helvetica Neue',Arial,sans-serif;
+  --void:#07050c;
+  --night:#0b0812;
+  --panel:#100c19;
+  --ink:#f3eee4;
+  --muted:#a49cae;
+  --dim:#7d7588;
+  --gold:#d9b877;
+  --gold-lit:#f2e2bd;
+  --violet:#8f74e8;
+  --line:rgba(217,184,119,.16);
+  --line-soft:rgba(243,238,228,.09);
+  --gutter:clamp(20px,4.6vw,72px);
+  --serif:'Playfair Display',Georgia,'Times New Roman',serif;
+  --sans:'Inter','Helvetica Neue',Arial,sans-serif;
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){--bg:#0e0c14; --bg2:#15121d; --ink:#f3ecde; --muted:#b4acbb; --gold:#d8b45f; --gold-soft:#e9cf8e; --line:rgba(216,180,95,.3); --card:#1a1624;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:88px;
+  -webkit-text-size-adjust:100%;
 }
-:root[data-theme="dark"]{--bg:#0e0c14; --bg2:#15121d; --ink:#f3ecde; --muted:#b4acbb; --gold:#d8b45f; --gold-soft:#e9cf8e; --line:rgba(216,180,95,.3); --card:#1a1624;}
-*{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:400;line-height:1.7;font-size:17px}
-a{color:inherit}
-h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.1}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-section{padding:96px 0}
-h2{font-size:clamp(30px,4.4vw,46px);margin-bottom:14px}
-.lead{color:var(--muted);max-width:560px}
-.rule{display:flex;align-items:center;gap:14px;color:var(--gold);margin:0 0 22px}
-.rule::before,.rule::after{content:"";height:1px;width:56px;background:var(--line)}
-.rule svg{width:14px;height:14px}
+body{
+  background:var(--void);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:16px;
+  line-height:1.7;
+  overflow-x:clip;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+ul,ol{list-style:none}
+::selection{background:var(--gold);color:#0a0710}
 
-nav{position:fixed;top:0;left:0;right:0;z-index:20;padding:calc(env(safe-area-inset-top,0px) + 14px) 24px 14px;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(#0e0c14ee,#0e0c1400);color:#f6efe2}
-nav b{font-family:var(--serif);font-size:26px;font-weight:600;letter-spacing:.02em}
-nav a.btn-s{font-size:14px;text-decoration:none;border:1px solid rgba(233,207,142,.6);padding:8px 18px;border-radius:40px;color:#e9cf8e}
-nav a.btn-s:hover{background:#e9cf8e;color:#0e0c14}
-
-.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;color:var(--hero-ink);padding:120px 24px 80px;
-  background:radial-gradient(ellipse at 50% 0%,#3a2a52 0%,#16111f 55%,#0b0910 100%)}
-.orb{position:absolute;border-radius:50%;filter:blur(2px);background:radial-gradient(circle at 35% 30%,#fff8e0,#e9cf8e 35%,#b8913f 70%,transparent 72%);opacity:.9;animation:drop 1.6s cubic-bezier(.2,.8,.2,1) both}
-.orb::before{content:"";position:absolute;left:50%;bottom:100%;width:1px;height:60vh;background:linear-gradient(transparent,rgba(233,207,142,.5))}
-.o1{width:26px;height:26px;left:12%;top:14%;animation-delay:.1s}
-.o2{width:44px;height:44px;left:26%;top:6%;animation-delay:.25s}
-.o3{width:18px;height:18px;left:41%;top:20%;animation-delay:.4s}
-.o4{width:36px;height:36px;right:30%;top:9%;animation-delay:.3s}
-.o5{width:22px;height:22px;right:16%;top:18%;animation-delay:.5s}
-.o6{width:50px;height:50px;right:6%;top:5%;animation-delay:.15s}
-@keyframes drop{from{transform:translateY(-70vh);opacity:0}to{transform:none;opacity:.9}}
-.glow{position:absolute;inset:auto 0 0 0;height:45%;background:radial-gradient(ellipse at 50% 100%,rgba(216,180,95,.28),transparent 70%)}
-
-/* Portada: luces de fiesta animadas */
-.fx{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.beam{position:absolute;top:-10%;left:50%;width:34vmax;margin-left:-17vmax;height:120%;transform-origin:50% 0;background:linear-gradient(180deg,rgba(233,207,142,.30),rgba(233,207,142,0) 70%);clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);filter:blur(6px);opacity:.55}
-.b1{animation:sweep1 11s ease-in-out infinite alternate}
-.b2{animation:sweep2 14s ease-in-out infinite alternate;background:linear-gradient(180deg,rgba(190,150,255,.28),rgba(190,150,255,0) 70%)}
-.b3{animation:sweep3 17s ease-in-out infinite alternate}
-@keyframes sweep1{from{transform:rotate(-38deg)}to{transform:rotate(-8deg)}}
-@keyframes sweep2{from{transform:rotate(30deg)}to{transform:rotate(6deg)}}
-@keyframes sweep3{from{transform:rotate(-16deg)}to{transform:rotate(22deg)}}
-.sp{position:absolute;border-radius:50%;background:radial-gradient(circle,#fff8e0 0%,#e9cf8e 40%,transparent 70%);opacity:0;animation:twinkle var(--d) ease-in-out var(--t) infinite}
-@keyframes twinkle{0%,100%{opacity:0;transform:translateY(0) scale(.6)}50%{opacity:.95;transform:translateY(-26px) scale(1.1)}}
-
-.hero .in{position:relative;max-width:760px}
-.hero h1{font-size:clamp(52px,11vw,112px);font-weight:400;letter-spacing:.01em;color:#f6efe2}
-.hero h1 i{font-style:italic;color:#e9cf8e}
-.hero p.sub{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.6vw,26px);color:#e9cf8e;margin:12px 0 10px}
-.hero p.loc{color:#cfc6d6;margin-bottom:36px}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-block;text-decoration:none;padding:14px 32px;border-radius:50px;font-weight:400;font-size:16px;transition:.25s;border:1px solid #e9cf8e}
-.btn.fill{background:linear-gradient(135deg,#f1dc9f,#c9a24e);color:#1a1409;border-color:transparent}
-.btn.fill:hover{filter:brightness(1.08)}
-.btn.line{color:#e9cf8e}.btn.line:hover{background:rgba(233,207,142,.14)}
-.btn:focus-visible,a:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
-
-.intro{text-align:center}.intro .lead{margin:0 auto}
-.intro .rule{justify-content:center}
-
-.services{background:var(--bg2)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:48px}
-.card{background:var(--card);border:1px solid var(--line);padding:38px 32px;border-radius:2px;position:relative}
-.card::before{content:"";position:absolute;inset:7px;border:1px solid var(--line);opacity:.5;pointer-events:none}
-.card h3{font-size:25px;color:var(--gold);margin-bottom:12px}
-.card p{color:var(--muted);font-size:16px}
-.card ul{list-style:none;padding:0;margin-top:6px}
-.card li{padding:9px 0;border-bottom:1px solid var(--line);font-size:16px}
-.card li:last-child{border:0}
-.card li::before{content:"\2726";color:var(--gold);margin-right:12px;font-size:11px}
-
-.reviews .head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:20px}
-.stars{color:var(--gold);letter-spacing:4px;font-size:18px}
-blockquote{background:var(--card);border-left:2px solid var(--gold);padding:30px 30px 26px;display:flex;flex-direction:column;gap:14px}
-blockquote p{font-family:var(--sans);font-size:17px;line-height:1.65;font-style:italic}
-blockquote footer{color:var(--muted);font-size:14px}
-.more{text-align:center;margin-top:48px}
-.more .btn{color:var(--gold);border-color:var(--gold)}
-.more .btn:hover{background:var(--gold);color:var(--bg)}
-
-.contact{background:var(--bg2);text-align:center}
-.contact .rule{justify-content:center}
-.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:44px 0}
-.cgrid a{display:block;text-decoration:none;border:1px solid var(--line);padding:28px 20px;background:var(--card);transition:.25s}
-.cgrid a:hover{border-color:var(--gold);transform:translateY(-3px)}
-.cgrid small{display:block;color:var(--muted);font-size:14px;margin-bottom:6px}
-.cgrid strong{font-family:var(--serif);font-size:21px;font-weight:500;color:var(--gold)}
-footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
-
-.wa{position:fixed;right:18px;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);z-index:30;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#f1dc9f,#c9a24e);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);text-decoration:none;color:#1a1409}
-.wa svg{width:28px;height:28px}
-
-/* Galerías */
-.gal{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:260px;gap:14px;margin-top:44px}
-.gal figure{position:relative;z-index:1;overflow:hidden;border:1px solid var(--line);background:var(--card);
-  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,z-index 0s linear .5s;
-  -webkit-tap-highlight-color:transparent}
-.gal figure.big{grid-column:span 2;grid-row:span 2}
-.gal img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;
-  -webkit-touch-callout:none;-webkit-user-drag:none;user-select:none}
-/* Efecto "sobresale": se activa por JavaScript (1.5 s en PC, mantener apretado en celular) */
-.gal figure.pop{transform:scale(1.20);z-index:5;box-shadow:0 22px 50px rgba(0,0,0,.45);
-  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease,z-index 0s}
-.gal figure.big.pop{transform:scale(1.04)}
-.gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 12px;font-family:var(--serif);font-size:20px;color:#f6efe2;background:linear-gradient(transparent,rgba(14,12,20,.8))}
-@media (max-width:700px){.gal{grid-template-columns:1fr 1fr;grid-auto-rows:170px;gap:10px}.gal figure.big{grid-column:span 2;grid-row:span 2}.gal figure:last-child{grid-column:span 2}}
-
-/* Galería del salón: grilla de 6 columnas para que disco y torta tengan proporción natural */
-#salon .gal{grid-template-columns:repeat(6,1fr);grid-template-rows:260px 260px 340px}
-#salon .gal figure{grid-column:span 2}
-#salon .gal figure.big{grid-column:span 4;grid-row:span 2}
-#salon .gal figure.wide{grid-column:span 3}
-/* disco.webp: sin deformarse. Si querés ver la foto completa (con bordes), cambiá cover por contain */
-.gal figure.disco img{object-fit:cover;object-position:center}
-@media (max-width:700px){
-  #salon .gal{grid-template-columns:1fr 1fr;grid-template-rows:none;grid-auto-rows:170px}
-  #salon .gal figure{grid-column:span 1}
-  #salon .gal figure.big{grid-column:span 2;grid-row:span 2}
-  #salon .gal figure.wide{grid-column:span 2;grid-row:span 2}
+:focus-visible{
+  outline:2px solid var(--gold-lit);
+  outline-offset:4px;
+  border-radius:2px;
 }
 
-/* Servicios: 3 arriba y 2 abajo centradas */
-#servicio .grid{grid-template-columns:repeat(6,1fr)}
-#servicio .card{grid-column:span 2}
-#servicio .card:nth-child(4){grid-column:2 / span 2}
-#servicio .card:nth-child(5){grid-column:4 / span 2}
-@media (max-width:900px){
-  #servicio .grid{grid-template-columns:1fr 1fr}
-  #servicio .card,
-  #servicio .card:nth-child(4),
-  #servicio .card:nth-child(5){grid-column:auto}
-  #servicio .card:last-child{grid-column:1 / -1}
+/* Grano: da textura fotográfica al negro plano */
+.grain{
+  position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode:overlay;
 }
-@media (max-width:600px){
-  #servicio .grid{grid-template-columns:1fr}
+
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:100;
+  background:var(--gold);color:#0a0710;padding:12px 20px;font-size:14px;
 }
-/* Formulario de consulta (diseño premium) */
-.lq{background:radial-gradient(ellipse at 15% 0%,#3a2a52 0%,#16111f 55%,#0b0910 100%);color:#f6efe2;position:relative;overflow:hidden}
-.lq::before{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(233,207,142,.18),transparent 70%)}
-.lq-grid{position:relative;display:grid;grid-template-columns:5fr 7fr;gap:56px;align-items:start}
-.lq-side h2{color:#f6efe2}
-.lq-side h2 i{font-style:italic;color:#e9cf8e}
-.lq-side p{color:#cfc6d6}
-.lq-perks{list-style:none;padding:0;margin:34px 0 0;display:grid;gap:22px}
-.lq-perks li{display:flex;gap:16px;align-items:flex-start}
-.lq-perks .ic{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid rgba(233,207,142,.5);display:grid;place-items:center;color:#e9cf8e;font-size:18px}
-.lq-perks strong{display:block;font-family:var(--serif);font-size:19px;font-weight:500;color:#f6efe2}
-.lq-perks span{color:#b9b0c2;font-size:15px}
-.lq-card{background:rgba(255,255,255,.05);border:1px solid rgba(233,207,142,.35);border-radius:22px;padding:40px 36px;backdrop-filter:blur(10px);box-shadow:0 30px 80px rgba(0,0,0,.45)}
-.lq-step{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:22px;color:#e9cf8e;margin:30px 0 16px}
-.lq-step:first-child{margin-top:0}
-.lq-step b{width:30px;height:30px;border-radius:50%;border:1px solid #e9cf8e;display:grid;place-items:center;font-size:14px;font-family:var(--sans);font-weight:600}
-.lq-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.lq-full{grid-column:1 / -1}
-.lq-l{display:block;font-size:14px;color:#cfc6d6;margin-bottom:6px}
-.lq-in{width:100%;font:inherit;font-size:16px;color:#f6efe2;background:rgba(10,8,16,.55);border:1px solid rgba(233,207,142,.25);border-radius:12px;padding:13px 15px;color-scheme:dark;transition:.2s}
-.lq-in::placeholder{color:#8f879a}
-.lq-in option{background:#16111f;color:#f6efe2}
-.lq-in:focus{outline:none;border-color:#e9cf8e;box-shadow:0 0 0 3px rgba(233,207,142,.18)}
-.lq-pills{display:flex;flex-wrap:wrap;gap:10px}
-.lq-pill{position:relative}
-.lq-pill input{position:absolute;opacity:0;pointer-events:none}
-.lq-pill span{display:inline-block;padding:9px 16px;border-radius:40px;border:1px solid rgba(233,207,142,.35);color:#e9d9ac;font-size:15px;cursor:pointer;transition:.2s}
-.lq-pill span:hover{background:rgba(233,207,142,.12)}
-.lq-pill input:checked + span{background:linear-gradient(135deg,#f1dc9f,#c9a24e);color:#1a1409;border-color:transparent;font-weight:600}
-.lq-pill input:focus-visible + span{outline:2px solid #e9cf8e;outline-offset:2px}
-.lq-btn{width:100%;display:flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;font:inherit;font-size:17px;font-weight:600;color:#1a1409;background:linear-gradient(135deg,#f1dc9f,#c9a24e);border:0;border-radius:50px;padding:16px 28px;margin-top:30px;box-shadow:0 10px 30px rgba(201,162,78,.3);transition:.25s}
-.lq-btn:hover{filter:brightness(1.08);transform:translateY(-2px)}
-.lq-btn svg{width:22px;height:22px}
-.lq-note{text-align:center;font-size:13px;color:#9f97aa;margin-top:12px}
-@media (max-width:900px){.lq-grid{grid-template-columns:1fr;gap:36px}}
-@media (max-width:560px){.lq-card{padding:28px 20px}.lq-row{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){.orb,.beam,.sp{animation:none}.sp{opacity:.5}html{scroll-behavior:auto}.gal figure,.gal figure.pop{transition:none}}
-@media (max-width:600px){section{padding:72px 0}.o1,.o3{display:none}}
+.skip:focus{left:12px;top:12px}
+
+/* ============================================================
+   2. TIPOGRAFÍA Y UTILIDADES
+   ============================================================ */
+.wrap{width:100%;max-width:1320px;margin-inline:auto;padding-inline:var(--gutter)}
+
+.eyebrow{
+  display:flex;align-items:center;gap:14px;
+  font-size:10.5px;font-weight:500;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:currentColor;opacity:.7;flex:none}
+.eyebrow--center{justify-content:center}
+.eyebrow--center::after{content:"";width:34px;height:1px;background:currentColor;opacity:.7;flex:none}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.015em}
+h2{font-size:clamp(34px,5.2vw,70px)}
+h3{font-size:clamp(26px,2.6vw,36px);line-height:1.12;letter-spacing:-.01em}
+h2 em,h1 em,h3 em{font-style:italic;color:var(--gold-lit)}
+
+.lead{
+  color:var(--muted);font-size:clamp(16px,1.15vw,18.5px);line-height:1.75;
+  max-width:56ch;font-weight:300;
+}
+.section{padding-block:clamp(84px,12vh,168px);position:relative}
+.section-head{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  column-gap:clamp(32px,6vw,90px);row-gap:20px;align-items:end;
+  margin-bottom:clamp(48px,7vh,84px);
+}
+.section-head .eyebrow{grid-column:1 / -1;align-self:start}
+.section-head h2{grid-column:1;max-width:16ch}
+.section-head .lead{grid-column:2;align-self:end;padding-bottom:.35em}
+.hair{height:1px;background:var(--line-soft);border:0}
+
+/* Reveals ---------------------------------------------------- */
+.js [data-reveal="up"]{opacity:0;transform:translateY(26px)}
+.js [data-reveal="up"].in{opacity:1;transform:none;transition:opacity .9s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0ms)}
+
+.js [data-reveal="fade"]{opacity:0}
+.js [data-reveal="fade"].in{opacity:1;transition:opacity 1.1s var(--ease);transition-delay:var(--d,0ms)}
+
+/* El recorte va en los hijos: si se aplica al observado, su área visible es 0
+   e IntersectionObserver nunca puede activar la animación. */
+.js [data-reveal="mask"] > *{clip-path:inset(0 0 100% 0)}
+.js [data-reveal="mask"].in > *{clip-path:inset(0 0 0 0);transition:clip-path 1.25s var(--ease-out);transition-delay:var(--d,0ms)}
+
+.js [data-reveal="wipe"]{clip-path:inset(0 100% 0 0)}
+.js [data-reveal="wipe"].in{clip-path:inset(0 0 0 0);transition:clip-path 1.3s var(--ease-out);transition-delay:var(--d,0ms)}
+
+/* Líneas de texto con máscara. El padding evita cortar descendentes. */
+.line{display:block;overflow:hidden;padding-bottom:.16em;margin-bottom:-.16em}
+.line>span{display:block;will-change:transform}
+.js .lines .line>span{transform:translateY(112%)}
+.js .lines.in .line>span{
+  transform:none;
+  transition:transform 1.15s var(--ease-out);
+  transition-delay:calc(var(--i,0) * 95ms);
+}
+
+/* ============================================================
+   3. NAV
+   ============================================================ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;
+  padding:calc(env(safe-area-inset-top,0px) + 20px) var(--gutter) 20px;
+  transition:padding .45s var(--ease),background .45s var(--ease),backdrop-filter .45s var(--ease),border-color .45s var(--ease);
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  padding-top:calc(env(safe-area-inset-top,0px) + 12px);
+  padding-bottom:12px;
+  background:rgba(7,5,12,.72);
+  -webkit-backdrop-filter:blur(16px) saturate(1.2);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom-color:var(--line-soft);
+}
+.brand{display:flex;align-items:baseline;gap:9px;font-family:var(--serif);font-size:22px;letter-spacing:.01em}
+.brand i{font-style:italic;color:var(--gold);font-size:.82em}
+.brand small{
+  font-family:var(--sans);font-size:9px;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--dim);font-weight:400;
+}
+.nav-links{display:flex;align-items:center;gap:clamp(18px,2.2vw,34px)}
+.nav-links a{
+  position:relative;font-size:13.5px;font-weight:400;color:var(--muted);
+  letter-spacing:.01em;transition:color .3s var(--ease);padding-block:4px;
+}
+.nav-links a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;
+  background:var(--gold);transform:scaleX(0);transform-origin:right;
+  transition:transform .45s var(--ease);
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-cta{
+  font-size:13px;padding:11px 22px;border-radius:100px;
+  border:1px solid var(--line);color:var(--gold-lit);
+  transition:background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease);
+}
+.nav-cta:hover{background:var(--gold);color:#0a0710;border-color:var(--gold)}
+
+.burger{
+  display:none;width:44px;height:44px;background:none;border:0;cursor:pointer;
+  position:relative;z-index:70;flex:none;
+}
+.burger span{
+  position:absolute;left:11px;width:22px;height:1px;background:var(--ink);
+  transition:transform .45s var(--ease),opacity .3s;
+}
+.burger span:nth-child(1){top:18px}
+.burger span:nth-child(2){top:25px}
+body.menu-open .burger span:nth-child(1){transform:translateY(3.5px) rotate(45deg)}
+body.menu-open .burger span:nth-child(2){transform:translateY(-3.5px) rotate(-45deg)}
+
+.menu{
+  position:fixed;inset:0;z-index:60;background:var(--void);
+  display:flex;flex-direction:column;justify-content:flex-start;gap:6px;
+  padding:calc(env(safe-area-inset-top,0px) + clamp(88px,12vh,132px)) var(--gutter) calc(env(safe-area-inset-bottom,0px) + 32px);
+  overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;
+  clip-path:inset(0 0 100% 0);
+  transition:clip-path .7s var(--ease-out);
+  visibility:hidden;
+}
+body.menu-open .nav{z-index:70}
+body.menu-open .menu{clip-path:inset(0 0 0 0);visibility:visible}
+.menu a{
+  font-family:var(--serif);font-size:clamp(30px,8vw,46px);color:var(--ink);
+  padding-block:10px;border-bottom:1px solid var(--line-soft);
+  opacity:0;transform:translateY(18px);
+  transition:opacity .5s var(--ease),transform .6s var(--ease);
+}
+body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0) * 60ms + 180ms)}
+.menu a small{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--gold);margin-right:14px;vertical-align:middle}
+.menu-foot{margin-top:34px;display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--muted)}
+.menu-foot a{font-family:var(--sans);font-size:13px;padding-block:4px;border-bottom:0}
+
+/* ============================================================
+   4. HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100svh;display:grid;align-content:end;
+  padding-bottom:clamp(36px,7vh,84px);overflow:hidden;isolation:isolate;
+}
+.hero-media{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero-media img{
+  width:100%;height:100%;object-fit:cover;object-position:50% 42%;
+  transform:scale(1.14);will-change:transform;
+}
+.hero-media::after{
+  content:"";position:absolute;inset:0;
+  background:
+    linear-gradient(to top,var(--void) 2%,rgba(7,5,12,.78) 30%,rgba(7,5,12,.22) 64%,rgba(7,5,12,.55) 100%),
+    linear-gradient(to right,rgba(7,5,12,.86) 0%,rgba(7,5,12,.46) 44%,transparent 72%),
+    radial-gradient(ellipse at 72% 18%,rgba(143,116,232,.26),transparent 58%);
+}
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;gap:clamp(18px,2.4vh,30px)}
+.hero .eyebrow{opacity:0;animation:fadeUp .9s var(--ease) .15s forwards}
+.hero h1{
+  font-size:clamp(46px,8.6vw,124px);
+  line-height:.94;letter-spacing:-.03em;max-width:13ch;
+}
+.hero h1 .line{padding-bottom:.1em;margin-bottom:-.1em}
+.hero h1 .line>span{opacity:0;transform:translateY(112%);animation:lineIn 1.25s var(--ease-out) forwards}
+.hero h1 .line:nth-child(1)>span{animation-delay:.28s}
+.hero h1 .line:nth-child(2)>span{animation-delay:.40s}
+
+/* Tipografía LED: puntos de luz recortados por el texto */
+.led{
+  font-family:var(--sans);font-weight:800;text-transform:uppercase;
+  font-size:.62em;letter-spacing:.09em;line-height:1;display:inline-block;
+  color:#f6e3b4;padding-block:.06em;
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .led{
+    color:transparent;
+    background-image:radial-gradient(circle at 50% 50%,#fffdf4 .018em,rgba(255,253,244,0) .023em);
+    background-size:.06em .06em;
+    -webkit-background-clip:text;background-clip:text;
+    filter:drop-shadow(0 0 .34em rgba(255,236,192,.9)) drop-shadow(0 0 1.1em rgba(233,197,120,.5));
+  }
+}
+
+.hero p.sub{
+  color:#d5cfe0;font-size:clamp(15.5px,1.4vw,19px);line-height:1.7;
+  max-width:44ch;font-weight:300;
+  opacity:0;animation:fadeUp .9s var(--ease) .62s forwards;
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fadeUp .9s var(--ease) .74s forwards}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:15px 30px;border-radius:100px;font-size:14px;font-weight:500;
+  letter-spacing:.02em;border:1px solid transparent;cursor:pointer;
+  transition:transform .4s var(--ease),background .35s var(--ease),color .35s var(--ease),border-color .35s var(--ease),box-shadow .4s var(--ease);
+}
+.btn svg{width:15px;height:15px;flex:none}
+.btn--gold{
+  background:linear-gradient(135deg,#f0dcae,#d9b877 58%,#c19d5c);
+  color:#150f06;box-shadow:0 12px 34px rgba(201,162,78,.22);
+}
+.btn--gold:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(201,162,78,.32)}
+.btn--ghost{border-color:rgba(243,238,228,.24);color:var(--ink)}
+.btn--ghost:hover{border-color:var(--gold);color:var(--gold-lit);background:rgba(217,184,119,.07)}
+
+.hero-foot{
+  margin-top:clamp(30px,5vh,54px);padding-top:20px;border-top:1px solid var(--line-soft);
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  opacity:0;animation:fadeUp .9s var(--ease) .88s forwards;
+}
+.hero-facts{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:12px;letter-spacing:.04em;color:var(--dim)}
+.hero-facts span{display:flex;align-items:center;gap:8px}
+.hero-facts span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--gold);opacity:.85}
+.scroll-cue{display:flex;align-items:center;gap:11px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
+.scroll-cue i{display:block;width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s var(--ease) infinite}
+
+/* Bola de espejos: sale del borde superior y se mueve con el scroll */
+.ball-wrap{
+  position:absolute;top:calc(env(safe-area-inset-top,0px) + 74px);right:clamp(16px,7vw,120px);z-index:1;
+  width:clamp(66px,8.5vw,112px);display:flex;flex-direction:column;align-items:center;
+  pointer-events:none;will-change:transform;
+}
+.ball-wire{width:1px;height:clamp(34px,9vh,96px);background:linear-gradient(rgba(217,184,119,0),rgba(217,184,119,.45))}
+.ball-img{
+  width:100%;height:auto;display:block;
+  filter:drop-shadow(0 0 26px rgba(150,140,255,.34));
+  transform-origin:50% -40%;
+  animation:sway 16s ease-in-out infinite alternate;
+}
+
+@keyframes lineIn{to{opacity:1;transform:none}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes sway{from{transform:rotate(-1.7deg)}to{transform:rotate(1.7deg)}}
+@keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
+
+/* ============================================================
+   5. MARQUEE
+   ============================================================ */
+.marquee{
+  border-block:1px solid var(--line-soft);padding-block:18px;overflow:hidden;
+  background:var(--night);
+}
+.marquee-track{display:flex;width:max-content;animation:slide 46s linear infinite}
+.marquee-track span{
+  display:flex;align-items:center;gap:26px;padding-inline:26px;
+  font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--dim);white-space:nowrap;
+}
+.marquee-track span::after{content:"✦";color:var(--gold);font-size:9px;letter-spacing:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ============================================================
+   6. MANIFIESTO
+   ============================================================ */
+.manifesto{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,6vw,96px);align-items:center}
+.manifesto-copy{display:flex;flex-direction:column;gap:26px}
+.manifesto h2{max-width:16ch}
+.manifesto h2 em{display:inline-block}
+.manifesto p{color:var(--muted);font-size:clamp(16px,1.2vw,18.5px);line-height:1.8;max-width:52ch}
+.manifesto-note{
+  display:flex;gap:16px;padding-top:22px;border-top:1px solid var(--line-soft);
+  font-size:13.5px;color:var(--dim);line-height:1.65;max-width:46ch;
+}
+.manifesto-note b{color:var(--gold);font-weight:500;flex:none;font-size:15px;line-height:1.4}
+.manifesto-media{position:relative}
+.manifesto-media .ph{border:1px solid var(--line-soft)}
+.manifesto-media figcaption{
+  margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);
+  display:flex;justify-content:space-between;gap:16px;
+}
+.manifesto-media figcaption i{font-style:normal;color:var(--gold)}
+
+.ph{position:relative;overflow:hidden;background:var(--panel)}
+.ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.12);will-change:transform}
+.ph--tall{aspect-ratio:4/5}
+.ph--wide{aspect-ratio:16/9}
+.ph--pano{aspect-ratio:21/9}
+
+/* ============================================================
+   7. LA NOCHE, HORA POR HORA
+   ============================================================ */
+.moments{background:var(--night);border-block:1px solid var(--line-soft)}
+.m-list{display:flex;flex-direction:column;gap:clamp(56px,9vh,120px)}
+.moment{
+  display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);
+  gap:clamp(24px,4vw,60px);align-items:center;
+}
+.m-media{grid-column:1;grid-row:1}
+.m-media .ph{aspect-ratio:4/3}
+.m-body{grid-column:2;grid-row:1;display:flex;flex-direction:column;gap:18px}
+.m-list{counter-reset:m}
+.moment{counter-increment:m}
+.m-kicker{
+  display:flex;align-items:center;gap:12px;
+  font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);
+}
+.m-kicker::before{
+  content:counter(m,decimal-leading-zero);
+  font-family:var(--serif);font-size:13.5px;letter-spacing:.04em;
+  color:var(--gold);opacity:.5;transition:opacity .5s var(--ease);
+}
+.m-kicker::after{content:"";width:26px;height:1px;background:var(--line);flex:none}
+.moment.is-active .m-kicker::before{opacity:1}
+.m-rail{display:none}
+.m-body h3{max-width:18ch}
+.m-body p{color:var(--muted);font-size:clamp(15.5px,1.1vw,17.5px);line-height:1.78;max-width:44ch}
+.m-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:6px}
+.m-tags li{
+  font-size:12px;letter-spacing:.02em;color:#c9c2d2;
+  border:1px solid var(--line-soft);border-radius:100px;padding:7px 14px;
+  transition:border-color .35s var(--ease),color .35s var(--ease);
+}
+.m-tags li:hover{border-color:var(--line);color:var(--gold-lit)}
+
+.moment:nth-child(even) .m-media{grid-column:2;grid-row:1}
+.moment:nth-child(even) .m-body{grid-column:1;grid-row:1}
+
+/* ============================================================
+   8. MENÚ
+   ============================================================ */
+.menu-band{position:relative;overflow:hidden}
+.menu-band::before{
+  content:"";position:absolute;left:50%;top:-30%;width:80vw;height:60vh;transform:translateX(-50%);
+  background:radial-gradient(ellipse,rgba(143,116,232,.14),transparent 65%);pointer-events:none;
+}
+.mb-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,6vw,90px);align-items:start}
+.mb-head{position:sticky;top:110px;display:flex;flex-direction:column;gap:20px}
+.courses{border-top:1px solid var(--line-soft)}
+.courses li{
+  display:grid;grid-template-columns:44px 1fr auto;align-items:baseline;gap:18px;
+  padding-block:19px;border-bottom:1px solid var(--line-soft);
+  transition:padding-left .4s var(--ease),border-color .4s var(--ease);
+}
+.courses li:hover{padding-left:8px;border-color:var(--line)}
+.courses .c-num{font-family:var(--serif);font-size:12px;color:var(--dim);letter-spacing:.1em;transition:color .4s}
+.courses li:hover .c-num{color:var(--gold)}
+.courses .c-name{font-family:var(--serif);font-size:clamp(19px,1.7vw,24px);color:var(--ink)}
+.courses .c-tag{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-align:right}
+
+/* ============================================================
+   9. GALERÍA HORIZONTAL
+   ============================================================ */
+.nights{padding-block:clamp(84px,12vh,168px);position:relative}
+.nights .section-head{margin-bottom:clamp(32px,5vh,56px)}
+.hwrap{position:relative}
+.hstick{
+  overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  scroll-padding-inline:var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;
+  cursor:grab;
+}
+.hstick::-webkit-scrollbar{display:none}
+.hstick.is-dragging{scroll-snap-type:none;scroll-behavior:auto;cursor:grabbing;user-select:none;-webkit-user-select:none}
+.htrack{position:relative;display:flex;width:max-content;gap:clamp(14px,2vw,26px);padding-inline:var(--gutter)}
+.hitem{flex:none;scroll-snap-align:start;width:clamp(180px,min(30vw,calc(75svh - 90px)),420px);position:relative;overflow:hidden}
+.hitem img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .9s var(--ease);pointer-events:none}
+.hitem:hover img{transform:scale(1.045)}
+.hitem figcaption{
+  position:absolute;inset:auto 0 0 0;padding:40px 20px 16px;
+  font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#e8e2ee;
+  background:linear-gradient(transparent,rgba(7,5,12,.82));
+  opacity:0;transform:translateY(8px);transition:opacity .5s var(--ease),transform .5s var(--ease);
+}
+.hitem:hover figcaption{opacity:1;transform:none}
+.hcontrols{margin:24px var(--gutter) 0;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.hint{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+.hbuttons{display:flex;align-items:center;gap:10px}
+.harrow{
+  width:44px;height:44px;display:grid;place-items:center;border-radius:50%;cursor:pointer;
+  border:1px solid var(--line);background:rgba(255,255,255,.025);color:var(--gold-lit);
+  transition:background .2s,border-color .2s,transform .15s;
+}
+.harrow svg{width:18px;height:18px}
+.harrow:hover:not(:disabled){border-color:var(--gold);background:rgba(217,184,119,.1)}
+.harrow:active:not(:disabled){transform:scale(.94)}
+.harrow:disabled{opacity:.3;cursor:default}
+
+/* ============================================================
+   10. EL SALÓN
+   ============================================================ */
+.venue{background:var(--night);border-block:1px solid var(--line-soft)}
+.venue-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,90px);align-items:start}
+.venue-grid figure{position:sticky;top:110px}
+.specs{border-top:1px solid var(--line-soft)}
+.specs>div{
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:20px;
+  padding-block:20px;border-bottom:1px solid var(--line-soft);align-items:baseline;
+}
+.specs dt{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold)}
+.specs dd{font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);color:#ded8e4;line-height:1.4}
+
+/* ============================================================
+   11. RESEÑAS
+   ============================================================ */
+.quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-soft);border-block:1px solid var(--line-soft)}
+.q{
+  background:var(--void);padding:clamp(28px,3.4vw,48px);display:flex;flex-direction:column;gap:20px;
+  transition:background .5s var(--ease);
+}
+.q:hover{background:var(--night)}
+.q blockquote{
+  font-family:var(--serif);font-size:clamp(17px,1.45vw,22px);line-height:1.55;color:#e6e0ec;
+  font-style:italic;
+}
+.q figcaption{display:flex;align-items:center;gap:12px;font-size:12px;color:var(--dim);letter-spacing:.06em}
+.q figcaption::before{content:"";width:22px;height:1px;background:var(--gold);opacity:.7}
+.stars{display:flex;gap:3px;color:var(--gold);font-size:12px}
+.stars i{font-style:normal;opacity:0;transform:scale(.5);display:inline-block}
+.stars.in i{opacity:1;transform:none;transition:opacity .5s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--s,0) * 90ms)}
+.reviews-foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(32px,5vh,52px)}
+.reviews-note{font-size:12.5px;color:var(--dim);max-width:40ch}
+.link-arrow{
+  display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--gold-lit);
+  border-bottom:1px solid var(--line);padding-bottom:6px;transition:gap .4s var(--ease),border-color .4s var(--ease);
+}
+.link-arrow:hover{gap:16px;border-color:var(--gold)}
+.link-arrow svg{width:13px;height:13px}
+
+/* ============================================================
+   12. FORMULARIO
+   ============================================================ */
+.quote-section{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 12% 0%,rgba(143,116,232,.2),transparent 55%),
+    radial-gradient(ellipse at 92% 100%,rgba(217,184,119,.12),transparent 55%),
+    var(--night);
+}
+.quote-grid{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:clamp(32px,5.5vw,80px);align-items:start}
+.quote-side{position:sticky;top:110px;display:flex;flex-direction:column;gap:24px}
+.perks{display:flex;flex-direction:column;gap:20px;margin-top:8px}
+.perks li{display:flex;gap:14px;align-items:flex-start;font-size:14px;color:var(--muted);line-height:1.6}
+.perks .ic{
+  flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;color:var(--gold);font-size:12px;
+}
+.perks b{display:block;color:var(--ink);font-weight:500;font-size:14.5px;margin-bottom:2px}
+
+.form{
+  background:rgba(255,255,255,.028);border:1px solid var(--line-soft);border-radius:20px;
+  padding:clamp(24px,3vw,42px);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+  display:flex;flex-direction:column;gap:26px;
+}
+.step{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:19px;color:var(--gold-lit)}
+.step b{
+  width:26px;height:26px;border-radius:50%;border:1px solid var(--line);
+  display:grid;place-items:center;font-family:var(--sans);font-size:11px;font-weight:600;color:var(--gold);
+}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:7px;min-width:0}
+.field--full{grid-column:1/-1}
+.field label{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.field input,.field select,.field textarea{
+  width:100%;font:inherit;font-size:16px;font-weight:300;color:var(--ink);
+  background:rgba(7,5,12,.55);border:1px solid rgba(243,238,228,.13);border-radius:10px;
+  padding:13px 14px;color-scheme:dark;
+  transition:border-color .3s var(--ease),box-shadow .3s var(--ease),background .3s var(--ease);
+}
+.field textarea{resize:vertical;min-height:88px}
+.field input::placeholder,.field textarea::placeholder{color:var(--muted)}
+.field select option{background:#100c19;color:var(--ink)}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,184,119,.14);background:rgba(7,5,12,.75);
+}
+.field input:user-invalid{border-color:#d98b7a}
+
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{position:relative}
+.pill input{position:absolute;opacity:0;width:0;height:0}
+.pill span{
+  display:inline-block;padding:9px 15px;border-radius:100px;border:1px solid rgba(243,238,228,.14);
+  font-size:12.5px;color:#c5becf;cursor:pointer;
+  transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease);
+}
+.pill span:hover{border-color:var(--line);color:var(--ink)}
+.pill input:checked+span{background:var(--gold);border-color:var(--gold);color:#150f06;font-weight:500}
+.pill input:focus-visible+span{outline:2px solid var(--gold-lit);outline-offset:3px}
+
+.submit{
+  display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
+  padding:16px 26px;border:0;border-radius:100px;cursor:pointer;
+  font-size:14.5px;font-weight:500;color:#150f06;
+  background:linear-gradient(135deg,#f0dcae,#d9b877 58%,#c19d5c);
+  box-shadow:0 14px 38px rgba(201,162,78,.2);
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+}
+.submit:hover{transform:translateY(-2px);box-shadow:0 20px 48px rgba(201,162,78,.3)}
+.submit svg{width:18px;height:18px}
+.form-note{font-size:11.5px;color:var(--muted);text-align:center;line-height:1.6;margin-top:-8px}
+
+/* ============================================================
+   13. UBICACIÓN
+   ============================================================ */
+.loc-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,72px);align-items:start}
+.loc-list{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line-soft);margin-top:8px}
+.loc-list a,.loc-list div{
+  display:flex;flex-direction:column;gap:3px;padding-block:18px;border-bottom:1px solid var(--line-soft);
+  transition:padding-left .4s var(--ease);
+}
+.loc-list a:hover{padding-left:8px}
+.loc-list small{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--dim)}
+.loc-list strong{font-family:var(--serif);font-size:clamp(17px,1.5vw,21px);font-weight:400;color:var(--ink)}
+.loc-list a:hover strong{color:var(--gold-lit)}
+.map{
+  position:relative;height:clamp(340px,40vw,520px);border:1px solid var(--line-soft);overflow:hidden;background:var(--panel);
+}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.35) contrast(1.05) brightness(.85)}
+.map-link{margin-top:16px}
+
+/* ============================================================
+   14. FOOTER
+   ============================================================ */
+.footer{border-top:1px solid var(--line-soft);padding-block:clamp(40px,6vh,64px) 32px;background:var(--void)}
+.foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap}
+.foot-brand{display:flex;flex-direction:column;gap:10px;max-width:32ch}
+.foot-brand b{font-family:var(--serif);font-size:clamp(26px,3vw,38px);font-weight:400;letter-spacing:-.01em}
+.foot-brand b i{font-style:italic;color:var(--gold)}
+.foot-brand p{font-size:12.5px;color:var(--dim);line-height:1.65}
+.foot-links{display:flex;flex-wrap:wrap;gap:10px 28px;font-size:13px;color:var(--muted)}
+.foot-links a{transition:color .3s}
+.foot-links a:hover{color:var(--gold-lit)}
+.foot-bottom{
+  margin-top:clamp(32px,5vh,52px);padding-top:20px;border-top:1px solid var(--line-soft);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  font-size:11.5px;color:var(--muted);letter-spacing:.03em;
+}
+
+/* ============================================================
+   15. WHATSAPP FLOTANTE
+   ============================================================ */
+.wa{
+  position:fixed;right:clamp(14px,2vw,26px);bottom:calc(env(safe-area-inset-bottom,0px) + 18px);
+  z-index:55;display:inline-flex;align-items:center;gap:10px;
+  padding:12px 18px 12px 14px;border-radius:100px;
+  background:rgba(12,9,18,.82);border:1px solid var(--line);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  box-shadow:0 14px 40px rgba(0,0,0,.45);
+  font-size:12.5px;letter-spacing:.02em;color:var(--ink);
+  transition:transform .4s var(--ease),border-color .4s var(--ease),background .4s var(--ease);
+}
+.wa:hover{transform:translateY(-3px);border-color:rgba(37,211,102,.45);background:rgba(16,12,24,.95)}
+.wa svg{width:20px;height:20px;color:#25d366;flex:none}
+.wa span{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .45s var(--ease),opacity .3s}
+.wa:hover span,.wa:focus-visible span{max-width:140px;opacity:1}
+
+/* ============================================================
+   16. RESPONSIVE
+   ============================================================ */
+@media (max-width:1080px){
+  .section-head{grid-template-columns:1fr;row-gap:16px}
+  .section-head h2,.section-head .lead{grid-column:1}
+  .section-head .lead{padding-bottom:0}
+  .venue-grid figure{position:static}
+  .manifesto{grid-template-columns:1fr;gap:44px}
+  .manifesto-media{max-width:520px}
+  .mb-grid,.venue-grid,.quote-grid,.loc-grid{grid-template-columns:1fr;gap:44px}
+  .mb-head,.quote-side{position:static}
+  .moment{grid-template-columns:1fr;gap:22px}
+  .m-media,.moment:nth-child(even) .m-media{grid-column:1;grid-row:1}
+  .m-body,.moment:nth-child(even) .m-body{grid-column:1;grid-row:2}
+  .m-media .ph{aspect-ratio:16/10}
+}
+
+@media (max-width:860px){
+  .nav-links,.nav-cta{display:none}
+  .burger{display:block}
+  .hstick{padding-block:8px 4px}
+  .hitem{width:min(72vw,320px)}
+  .hitem img{aspect-ratio:4/5}
+  .hitem figcaption{opacity:1;transform:none}
+  .hcontrols{margin-top:18px}
+  .quotes{grid-template-columns:1fr}
+}
+
+@media (max-width:680px){
+  :root{--gutter:20px}
+  html{scroll-padding-top:76px}
+  .hero{min-height:100svh;padding-bottom:32px}
+  .hero h1{font-size:clamp(40px,11.5vw,64px);max-width:100%}
+  .led{
+    font-size:.7em;letter-spacing:.06em;
+    color:#f6e3b4;background-image:none;-webkit-text-fill-color:#f6e3b4;
+    filter:drop-shadow(0 0 12px rgba(233,197,120,.55));
+  }
+  .eyebrow{letter-spacing:.26em}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions .btn{width:100%}
+  .hero-foot{flex-direction:column;align-items:flex-start;gap:16px}
+  .scroll-cue{display:none}
+  .hero-facts{font-size:11px;gap:6px 16px}
+  .ball-wrap{width:74px;right:14px}
+  .ball-wire{height:52px}
+  .row{grid-template-columns:1fr}
+  .specs>div{grid-template-columns:1fr;gap:6px}
+  .courses li{grid-template-columns:32px 1fr;gap:14px}
+  .courses .c-tag{display:none}
+  .q{padding:26px 22px}
+  .wa{padding:13px;border-radius:50%}
+  .wa span{display:none}
+  .moment{grid-template-columns:1fr}
+  .m-media,.m-body,.moment:nth-child(even) .m-media,.moment:nth-child(even) .m-body{grid-column:1}
+  .m-media{grid-row:1}.m-body{grid-row:2}
+  .foot-top{flex-direction:column}
+}
+
+/* En pantallas de poca altura, el contenido empieza debajo del nav y la
+   sección crece en lugar de quedar escondida detrás de él. */
+@media (max-height:600px){
+  .hero{align-content:start;padding-top:calc(env(safe-area-inset-top,0px) + 100px)}
+}
+@media (min-width:861px) and (max-height:600px){
+  .hcontrols{margin-top:16px}
+}
+
+/* Sin JS la galería conserva el scroll horizontal nativo. */
+html:not(.js) .hcontrols{display:none}
+
+/* ============================================================
+   17. MOVIMIENTO REDUCIDO
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+  .js [data-reveal],.js [data-reveal="mask"]>*,.js .lines .line>span,.hero .eyebrow,.hero p.sub,.hero-actions,.hero-foot,.hero h1 .line>span{
+    opacity:1!important;transform:none!important;clip-path:none!important;
+  }
+  .hero-media img,.ph img,.ball-wrap{transform:none!important}
+  .marquee-track{animation:none!important}
+  .ball-img{animation:none!important}
+  .hstick{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
 
-<nav>
-  <b>Cand's</b>
-  <a class="btn-s" href="#cotizar">Consultar fecha</a>
-</nav>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="grain" aria-hidden="true"></div>
 
-<header class="hero">
-  <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
-  <span class="orb o4"></span><span class="orb o5"></span><span class="orb o6"></span>
-  <div class="glow"></div>
-  <div class="fx" aria-hidden="true">
-    <span class="beam b1"></span><span class="beam b2"></span><span class="beam b3"></span>
-    <div id="sparkles"></div>
-  </div>
-  <div class="in">
-    <h1>Cand's <i>Eventos</i></h1>
-    <p class="sub">Tu fiesta, una noche inolvidable</p>
-    <p class="loc">Salón de fiestas en Ituzaingó, Buenos Aires</p>
-    <div class="btns">
-      <a class="btn fill" href="#cotizar">Consultar fecha</a>
-      <a class="btn line" href="#servicio">Qué incluye</a>
-    </div>
-  </div>
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <a class="brand" href="#top" aria-label="Cand's Eventos Ituzaingó, inicio">
+    Cand's <i>Eventos</i>
+    <small>Ituzaingó</small>
+  </a>
+  <nav class="nav-links" aria-label="Secciones">
+    <a href="#noche">La noche</a>
+    <a href="#galeria">Galería</a>
+    <a href="#espacio">El salón</a>
+    <a href="#resenas">Reseñas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a class="nav-cta" href="#cotizar">Consultar fecha</a>
+  <button class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+    <span></span><span></span>
+  </button>
 </header>
 
-<section class="intro">
-  <div class="wrap">
-    <div class="rule"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></svg></div>
-    <h2>Todo en un solo lugar</h2>
-    <p class="lead">Cuando contratás Cand's Eventos te ocupás solo de disfrutar: la comida, la música, la ambientación y la organización están resueltas de principio a fin.</p>
+<nav class="menu" id="menu" aria-label="Menú de navegación" aria-hidden="true">
+  <a href="#noche" style="--i:0"><small>01</small>La noche</a>
+  <a href="#galeria" style="--i:1"><small>02</small>Galería</a>
+  <a href="#espacio" style="--i:2"><small>03</small>El salón</a>
+  <a href="#resenas" style="--i:3"><small>04</small>Reseñas</a>
+  <a href="#cotizar" style="--i:4"><small>05</small>Consultar fecha</a>
+  <a href="#contacto" style="--i:5"><small>06</small>Contacto</a>
+  <div class="menu-foot">
+    <a href="tel:+5491133143561">11 3314-3561</a>
+    <a href="https://www.instagram.com/candseventos" target="_blank" rel="noopener">@candseventos</a>
+    <span>Turquía 2689, Ituzaingó</span>
   </div>
-</section>
+</nav>
 
-<section class="services" id="servicio">
-  <div class="wrap">
-    <h2>Lo que incluye tu fiesta</h2>
-    <p class="lead">Cinco servicios pensados para que cada detalle esté cuidado.</p>
-    <div class="grid">
-      <article class="card">
-        <h3>Servicio gastronómico completo</h3>
-        <ul>
-          <li>Recepción fría y caliente</li>
-          <li>Primer plato</li>
-          <li>Plato principal</li>
-          <li>Postre</li>
-          <li>Mesa dulce</li>
-          <li>Final de fiesta</li>
-          <li>Bebidas con y sin alcohol</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Diversión toda la noche</h3>
-        <ul>
-          <li>DJ profesional</li>
-          <li>Pantallas</li>
-          <li>Iluminación LED y láser</li>
-          <li>Máquina de humo</li>
-          <li>Esferas de luces</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Una ambientación que hace la diferencia</h3>
-        <ul>
-          <li>Mantelería</li>
-          <li>Sillas Royal cristal</li>
-          <li>Centros de mesa</li>
-          <li>Ambientación completa de la mesa principal</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Organización de principio a fin</h3>
-        <ul>
-          <li>Coordinación durante todo el evento</li>
-          <li>Recepcionista</li>
-          <li>Guardarropas</li>
-          <li>Seguridad</li>
-          <li>Cámaras de monitoreo dentro y fuera del salón</li>
-        </ul>
-      </article>
-      <article class="card">
-        <h3>Un espacio preparado para celebrar</h3>
-        <ul>
-          <li>Salón completamente equipado</li>
-          <li>Ambiente climatizado, frío y calor</li>
-          <li>Suite privada para los homenajeados</li>
-          <li>Ascensor</li>
-          <li>Grupo electrógeno</li>
-        </ul>
-      </article>
+<main id="contenido">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <img src="salon2.webp" alt="Salón de Cand's Eventos iluminado en violeta durante una fiesta de 15"
+         width="1600" height="979" fetchpriority="high" decoding="async" data-parallax=".06">
+  </div>
+
+  <div class="ball-wrap" aria-hidden="true" data-parallax="-.09">
+    <span class="ball-wire"></span>
+    <img class="ball-img" src="ball.png" alt="" width="240" height="240" decoding="async">
+  </div>
+
+  <div class="wrap hero-inner">
+    <p class="eyebrow">Salón de fiestas · Ituzaingó, Buenos Aires</p>
+    <h1>
+      <span class="line"><span>Tu noche,</span></span>
+      <span class="line"><span><em class="led">en luces</em></span></span>
+    </h1>
+    <p class="sub">
+      Quince, casamientos y cumpleaños con la gastronomía, la música, la ambientación
+      y la coordinación resueltas de principio a fin.
+    </p>
+    <div class="hero-actions">
+      <a class="btn btn--gold" href="#cotizar">
+        Consultar mi fecha
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a class="btn btn--ghost" href="#noche">Ver qué incluye</a>
     </div>
-  </div>
-</section>
-
-<section id="salon">
-  <div class="wrap">
-    <h2>Conocé el salón</h2>
-    <p class="lead">Un espacio equipado, climatizado y decorado para que tu fiesta sea el centro de la noche.</p>
-    <div class="gal">
-      <figure class="big"><img src="salon1.webp" alt="Salón de fiestas Cand's Eventos por dentro" loading="lazy"></figure>
-      <figure><img src="salon2.webp" alt="Vista del salón con iluminación y ambientación" loading="lazy"></figure>
-      <figure><img src="salon3.webp" alt="Mesas del salón de eventos" loading="lazy"></figure>
-      <figure class="wide"><img src="torta.webp" alt="Mesa principal decorada con torta" loading="lazy"></figure>
-      <figure class="wide disco"><img src="disco.webp" alt="Centro del salón, la pista de baile" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="gastronomia">
-  <div class="wrap">
-    <h2>Una mesa para recordar</h2>
-    <p class="lead">Recepción, picadas y mesa dulce: todo fresco, abundante y con una presentación cuidada.</p>
-    <div class="gal">
-      <figure class="big"><img src="mesadulce.webp" alt="Mesa dulce del salón" loading="lazy"></figure>
-      <figure><img src="picada.webp" alt="Picada de recepción" loading="lazy"></figure>
-      <figure><img src="picada2.webp" alt="Picada de recepción" loading="lazy"></figure>
-      <figure><img src="picada3.webp" alt="Catering de recepción" loading="lazy"></figure>
-      <figure><img src="picada4.webp" alt="Catering de recepción" loading="lazy"></figure>
-      <figure><img src="picada5.webp" alt="Catering de recepción" loading="lazy"></figure>
-    </div>
-  </div>
-</section>
-
-<section class="reviews" id="resenas">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <h2>Lo que dicen nuestros clientes</h2>
-        <p class="lead">Reseñas reales de Google Maps.</p>
+    <div class="hero-foot">
+      <div class="hero-facts">
+        <span>Catering completo</span>
+        <span>DJ y luces</span>
+        <span>Ambientación</span>
+        <span>Coordinación</span>
+        <span>Suite privada</span>
       </div>
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-    </div>
-    <div class="grid">
-      <blockquote>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>Realmente superó lo que imaginaba respecto a la organización, servicio y atención. El catering, tanto en la recepción como en el evento principal, un 10 en calidad y cantidad. Recomendable mil por ciento.</p>
-      </blockquote>
-      <blockquote>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>Un servicio impecable, gente confiable y comprometida. El lugar es hermoso, con una decoración de 10. La comida sin TACC para tres personas fue lo mejor de lo mejor. No dejaron de bailar chicos y grandes.</p>
-      </blockquote>
-      <blockquote>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>No hay palabras para describir a Cand's y su equipo. Sonia estuvo con nosotros en cada detalle, la comida fue abundante y riquísima, los mozos con toda la onda y Facu, el DJ, excelente. Vivimos una noche inolvidable.</p>
-      </blockquote>
-      <blockquote>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>El DJ, la música y las luces, excelentes. La recepción con el barman y los mozos fue de lo mejor: atienden con buena onda y hasta se divierten bailando a lo largo del evento. Si tuviera que hacer otra fiesta, no dudaría en elegirlos de nuevo.</p>
-      </blockquote>
-      <blockquote>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>Excelente atención de todo el personal y la atención de Sonia, impecable. Mis invitados no dejaron de felicitarme: la comida excelente. Se los recomiendo con los ojos cerrados y disfrutar de la noche. Muchas gracias, Cand's Eventos.</p>
-      </blockquote>
-      <blockquote>
-        <div class="stars" aria-hidden="true">★★★★★</div>
-        <p>Ayer festejamos los 15 de mi hija y todo fue excelente, desde Sonia y su grupo de trabajo hasta el DJ Facu, un fenómeno. La comida riquísima y en mucha cantidad. Sonia está en todos los detalles para que sea una noche mágica. Volvería a elegir Cand's mil veces más. Gracias por ayudarnos a cumplir la noche soñada de mi hija.</p>
-      </blockquote>
-    </div>
-    <div class="more">
-      <a class="btn" href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.655907,-58.699949,16z/data=!4m6!3m5!1s0x95bcbf9c3709fcad:0xe8053f97f3f141b1!8m2!3d-34.653281!4d-58.6951358!16s%2Fg%2F11cmmzvxqy?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Ver todas las reseñas en Google Maps</a>
+      <div class="scroll-cue" aria-hidden="true"><i></i>Bajá para ver la noche</div>
     </div>
   </div>
 </section>
 
-<section class="lq" id="cotizar">
-  <div class="wrap lq-grid">
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Recepción fría y caliente</span><span>DJ profesional</span><span>Sillas Royal Cristal</span>
+    <span>Mesa dulce</span><span>Iluminación LED y láser</span><span>Suite privada</span>
+    <span>Grupo electrógeno</span><span>Coordinación integral</span>
+    <span>Recepción fría y caliente</span><span>DJ profesional</span><span>Sillas Royal Cristal</span>
+    <span>Mesa dulce</span><span>Iluminación LED y láser</span><span>Suite privada</span>
+    <span>Grupo electrógeno</span><span>Coordinación integral</span>
+  </div>
+</div>
 
-    <div class="lq-side">
-      <div class="rule"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></svg></div>
-      <h2>Empecemos a <i>armar tu fiesta</i></h2>
-      <p>Contanos cómo la imaginás y te respondemos por WhatsApp con la información y la disponibilidad de fechas.</p>
-      <ul class="lq-perks">
-        <li><div class="ic">✦</div><div><strong>Atención personalizada</strong><span>Te acompañamos en cada detalle, desde la primera consulta.</span></div></li>
-        <li><div class="ic">✦</div><div><strong>Sin compromiso</strong><span>Consultá tranquilo, sin ningún costo.</span></div></li>
-        <li><div class="ic">✦</div><div><strong>Respuesta por WhatsApp</strong><span>Con tus datos ya cargados, vamos directo a lo importante.</span></div></li>
+<!-- ===================== MANIFIESTO ===================== -->
+<section class="section" id="nosotros">
+  <div class="wrap manifesto">
+    <div class="manifesto-copy">
+      <p class="eyebrow" data-reveal="up">El salón</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">Una noche no</span></span>
+        <span class="line"><span style="--i:1">se arma sola.</span></span>
+        <span class="line"><span style="--i:2"><em>Se dirige.</em></span></span>
+      </h2>
+      <p data-reveal="up" style="--d:120ms">
+        Hay un momento exacto en que la fiesta deja de ser una fecha en el calendario
+        y empieza a ser tu noche: cuando entrás al salón y todo ya está en su lugar.
+        La mesa puesta, la música sonando, alguien recibiendo a tus invitados.
+      </p>
+      <p data-reveal="up" style="--d:200ms">
+        Trabajamos para ese momento. Un solo equipo se ocupa de la cocina, la barra,
+        la ambientación, las luces y la coordinación, para que vos puedas estar
+        donde tenés que estar: bailando con los tuyos.
+      </p>
+      <div class="manifesto-note" data-reveal="up" style="--d:280ms">
+        <b>✦</b>
+        <span>Un solo contacto desde la primera consulta hasta el último tema. Sin proveedores sueltos que coordinar.</span>
+      </div>
+    </div>
+
+    <figure class="manifesto-media" data-reveal="mask">
+      <div class="ph ph--tall">
+        <img src="salon3.webp" alt="Mesa principal con letras luminosas y sillas Royal Cristal"
+             width="1545" height="1018" loading="lazy" decoding="async" data-parallax=".05">
+      </div>
+      <figcaption><span>Mesa principal</span><i>Ambientación completa</i></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===================== LA NOCHE ===================== -->
+<section class="section moments" id="noche">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal="up">Lo que incluye</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">La noche,</span></span>
+        <span class="line"><span style="--i:1"><em>hora por hora.</em></span></span>
+      </h2>
+      <p class="lead" data-reveal="up" style="--d:160ms">
+        Cinco momentos, un solo equipo detrás de cada uno. Así se sucede una fiesta
+        en Cand's, desde que se abre la puerta hasta que se apagan las luces.
+      </p>
+    </div>
+
+    <ol class="m-list">
+
+      <li class="moment" data-moment>
+        <div class="m-rail" aria-hidden="true"><span class="m-num">01</span></div>
+        <div class="m-media">
+          <figure class="ph" data-reveal="mask">
+            <img src="picada.webp" alt="Picada de recepción servida antes de la cena"
+                 width="1600" height="941" loading="lazy" decoding="async" data-parallax=".05">
+          </figure>
+        </div>
+        <div class="m-body">
+          <p class="m-kicker" data-reveal="up">Recepción</p>
+          <h3 data-reveal="up" style="--d:60ms">La primera impresión</h3>
+          <p data-reveal="up" style="--d:120ms">
+            La puerta se abre y ya hay alguien esperando. Recepción fría y caliente,
+            barman y guardarropas: todo listo antes de que llegue el primer invitado.
+          </p>
+          <ul class="m-tags" data-reveal="up" style="--d:180ms">
+            <li>Recepción fría y caliente</li>
+            <li>Barman</li>
+            <li>Recepcionista</li>
+            <li>Guardarropas</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="moment" data-moment>
+        <div class="m-rail" aria-hidden="true"><span class="m-num">02</span></div>
+        <div class="m-media">
+          <figure class="ph" data-reveal="mask">
+            <img src="salon1.webp" alt="Salón con mesas servidas e iluminación azul"
+                 width="1535" height="1025" loading="lazy" decoding="async" data-parallax=".05">
+          </figure>
+        </div>
+        <div class="m-body">
+          <p class="m-kicker" data-reveal="up">La mesa</p>
+          <h3 data-reveal="up" style="--d:60ms">Todo servido, nada pendiente</h3>
+          <p data-reveal="up" style="--d:120ms">
+            Primer plato, plato principal y postre, con bebidas con y sin alcohol durante
+            toda la noche. Mantelería, sillas Royal Cristal y centros de mesa: cuando te
+            sentás, la mesa ya está puesta.
+          </p>
+          <ul class="m-tags" data-reveal="up" style="--d:180ms">
+            <li>Primer plato</li>
+            <li>Plato principal</li>
+            <li>Postre</li>
+            <li>Bebidas con y sin alcohol</li>
+            <li>Mantelería</li>
+            <li>Sillas Royal Cristal</li>
+            <li>Centros de mesa</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="moment" data-moment>
+        <div class="m-rail" aria-hidden="true"><span class="m-num">03</span></div>
+        <div class="m-media">
+          <figure class="ph" data-reveal="mask">
+            <img src="torta.webp" alt="Mesa dulce con torta, globos y letras de neón"
+                 width="1537" height="1023" loading="lazy" decoding="async" data-parallax=".05">
+          </figure>
+        </div>
+        <div class="m-body">
+          <p class="m-kicker" data-reveal="up">Mesa dulce</p>
+          <h3 data-reveal="up" style="--d:60ms">El momento dulce</h3>
+          <p data-reveal="up" style="--d:120ms">
+            La torta, la mesa dulce y el final de fiesta. El tramo de la noche donde
+            todos se juntan alrededor de la misma mesa y nadie mira el reloj.
+          </p>
+          <ul class="m-tags" data-reveal="up" style="--d:180ms">
+            <li>Mesa dulce completa</li>
+            <li>Torta</li>
+            <li>Final de fiesta</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="moment" data-moment>
+        <div class="m-rail" aria-hidden="true"><span class="m-num">04</span></div>
+        <div class="m-media">
+          <figure class="ph" data-reveal="mask">
+            <img src="disco.webp" alt="Pista de baile con esferas de espejos y luces LED"
+                 width="1549" height="1015" loading="lazy" decoding="async" data-parallax=".05">
+          </figure>
+        </div>
+        <div class="m-body">
+          <p class="m-kicker" data-reveal="up">El baile</p>
+          <h3 data-reveal="up" style="--d:60ms">Cuando se apagan las luces</h3>
+          <p data-reveal="up" style="--d:120ms">
+            DJ profesional, pantallas, iluminación LED, láser, máquina de humo y esferas
+            de luces. La pista se enciende y la noche cambia de ritmo.
+          </p>
+          <ul class="m-tags" data-reveal="up" style="--d:180ms">
+            <li>DJ profesional</li>
+            <li>Pantallas</li>
+            <li>Iluminación LED y láser</li>
+            <li>Máquina de humo</li>
+            <li>Esferas de luces</li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="moment" data-moment>
+        <div class="m-rail" aria-hidden="true"><span class="m-num">05</span></div>
+        <div class="m-media">
+          <figure class="ph" data-reveal="mask">
+            <img src="mesadulce.webp" alt="Postre servido en la mesa dulce del salón"
+                 width="1539" height="1022" loading="lazy" decoding="async" data-parallax=".05">
+          </figure>
+        </div>
+        <div class="m-body">
+          <p class="m-kicker" data-reveal="up">El cierre</p>
+          <h3 data-reveal="up" style="--d:60ms">Que no falte nada</h3>
+          <p data-reveal="up" style="--d:120ms">
+            Coordinación durante todo el evento, seguridad y cámaras dentro y fuera del
+            salón. Suite privada para los homenajeados, ascensor, grupo electrógeno y
+            climatización frío/calor.
+          </p>
+          <ul class="m-tags" data-reveal="up" style="--d:180ms">
+            <li>Coordinación integral</li>
+            <li>Seguridad y cámaras</li>
+            <li>Suite privada</li>
+            <li>Ascensor</li>
+            <li>Grupo electrógeno</li>
+            <li>Climatización</li>
+          </ul>
+        </div>
+      </li>
+
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== MENÚ ===================== -->
+<section class="section menu-band">
+  <div class="wrap mb-grid">
+    <div class="mb-head">
+      <p class="eyebrow" data-reveal="up">El menú</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">Completo, de la</span></span>
+        <span class="line"><span style="--i:1">recepción al</span></span>
+        <span class="line"><span style="--i:2"><em>final de fiesta.</em></span></span>
+      </h2>
+      <p class="lead" data-reveal="up" style="--d:160ms">
+        El menú se define antes y se sirve igual para todos: sin sorpresas a mitad
+        de la noche.
+      </p>
+    </div>
+
+    <ol class="courses">
+      <li data-reveal="up" style="--d:0ms"><span class="c-num">01</span><span class="c-name">Recepción fría y caliente</span><span class="c-tag">Al llegar</span></li>
+      <li data-reveal="up" style="--d:60ms"><span class="c-num">02</span><span class="c-name">Primer plato</span><span class="c-tag">Servido en mesa</span></li>
+      <li data-reveal="up" style="--d:120ms"><span class="c-num">03</span><span class="c-name">Plato principal</span><span class="c-tag">Servido en mesa</span></li>
+      <li data-reveal="up" style="--d:180ms"><span class="c-num">04</span><span class="c-name">Postre</span><span class="c-tag">Servido en mesa</span></li>
+      <li data-reveal="up" style="--d:240ms"><span class="c-num">05</span><span class="c-name">Mesa dulce</span><span class="c-tag">Torta y dulces</span></li>
+      <li data-reveal="up" style="--d:300ms"><span class="c-num">06</span><span class="c-name">Final de fiesta</span><span class="c-tag">Para el cierre</span></li>
+      <li data-reveal="up" style="--d:360ms"><span class="c-num">07</span><span class="c-name">Bebidas con y sin alcohol</span><span class="c-tag">Toda la noche</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== GALERÍA HORIZONTAL ===================== -->
+<section class="nights" id="galeria">
+  <div class="wrap section-head">
+    <p class="eyebrow" data-reveal="up">Galería</p>
+    <h2 class="lines" data-reveal="lines">
+      <span class="line"><span style="--i:0">Noches <em>reales.</em></span></span>
+    </h2>
+    <p class="lead" data-reveal="up" style="--d:140ms">
+      Fiestas que ya pasaron por el salón. Cada una con su nombre en luces.
+    </p>
+  </div>
+
+  <div class="hwrap" data-gallery>
+    <div class="hstick" id="galeria-carrusel" data-hscroller tabindex="0" role="region" aria-label="Galería de fotos del salón. Arrastrá o usá las flechas para navegar">
+      <div class="htrack" data-htrack>
+        <figure class="hitem">
+          <img src="salon2.webp" alt="Fiesta de 15 con iluminación violeta y pantallas Cand's" width="1600" height="979" loading="lazy" decoding="async">
+          <figcaption>Quince · Ituzaingó</figcaption>
+        </figure>
+        <figure class="hitem">
+          <img src="disco.webp" alt="Esferas de espejos sobre la pista de baile" width="1549" height="1015" loading="lazy" decoding="async">
+          <figcaption>Pista y esferas</figcaption>
+        </figure>
+        <figure class="hitem">
+          <img src="torta.webp" alt="Mesa dulce con torta de tres pisos y globos" width="1537" height="1023" loading="lazy" decoding="async">
+          <figcaption>Mesa dulce</figcaption>
+        </figure>
+        <figure class="hitem">
+          <img src="salon1.webp" alt="Salón con letras luminosas y mesas vestidas" width="1535" height="1025" loading="lazy" decoding="async">
+          <figcaption>Salón principal</figcaption>
+        </figure>
+        <figure class="hitem">
+          <img src="salon3.webp" alt="Mesa principal con sillas Royal Cristal" width="1545" height="1018" loading="lazy" decoding="async">
+          <figcaption>Mesa principal</figcaption>
+        </figure>
+        <figure class="hitem">
+          <img src="picada4.webp" alt="Bocados de recepción servidos en bandejas" width="1600" height="881" loading="lazy" decoding="async">
+          <figcaption>Recepción</figcaption>
+        </figure>
+        <figure class="hitem">
+          <img src="mesadulce.webp" alt="Postre artesanal servido en la mesa dulce" width="1539" height="1022" loading="lazy" decoding="async">
+          <figcaption>Patisserie</figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="hcontrols">
+      <p class="hint" aria-hidden="true">Deslizá o usá las flechas</p>
+      <div class="hbuttons">
+        <button class="harrow" type="button" data-hprev aria-label="Foto anterior" aria-controls="galeria-carrusel" disabled>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M19 12H5m6 6-6-6 6-6"/></svg>
+        </button>
+        <button class="harrow" type="button" data-hnext aria-label="Foto siguiente" aria-controls="galeria-carrusel">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EL SALÓN ===================== -->
+<section class="section venue" id="espacio">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal="up">El espacio</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">Pensado para que</span></span>
+        <span class="line"><span style="--i:1"><em>no falte nada.</em></span></span>
+      </h2>
+    </div>
+
+    <div class="venue-grid">
+      <dl class="specs">
+        <div data-reveal="up"><dt>Climatización</dt><dd>Frío y calor en todo el salón</dd></div>
+        <div data-reveal="up" style="--d:60ms"><dt>Homenajeados</dt><dd>Suite privada para ellos</dd></div>
+        <div data-reveal="up" style="--d:120ms"><dt>Accesibilidad</dt><dd>Ascensor para llegar al salón</dd></div>
+        <div data-reveal="up" style="--d:180ms"><dt>Continuidad</dt><dd>Grupo electrógeno propio</dd></div>
+        <div data-reveal="up" style="--d:240ms"><dt>Seguridad</dt><dd>Cámaras de monitoreo dentro y fuera</dd></div>
+        <div data-reveal="up" style="--d:300ms"><dt>Equipamiento</dt><dd>Salón completamente equipado</dd></div>
+      </dl>
+
+      <figure class="ph ph--wide" data-reveal="mask">
+        <img src="salon1.webp" alt="Vista amplia del salón de fiestas con mesas y luces"
+             width="1535" height="1025" loading="lazy" decoding="async" data-parallax=".07">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESEÑAS ===================== -->
+<section class="section" id="resenas">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-reveal="up">Reseñas</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">Lo que se dice</span></span>
+        <span class="line"><span style="--i:1"><em>después.</em></span></span>
+      </h2>
+      <p class="lead" data-reveal="up" style="--d:140ms">
+        Reseñas reales de Google Maps, escritas por quienes ya vivieron su noche acá.
+      </p>
+    </div>
+
+    <div class="quotes">
+      <figure class="q">
+        <div class="stars" data-stars role="img" aria-label="5 estrellas">★★★★★</div>
+        <blockquote>“Realmente superó lo que imaginaba respecto a la organización, servicio y atención. El catering, tanto en la recepción como en el evento principal, un 10 en calidad y cantidad. Recomendable mil por ciento.”</blockquote>
+        <figcaption>Reseña en Google Maps</figcaption>
+      </figure>
+
+      <figure class="q">
+        <div class="stars" data-stars role="img" aria-label="5 estrellas">★★★★★</div>
+        <blockquote>“Un servicio impecable, gente confiable y comprometida. El lugar es hermoso, con una decoración de 10. La comida sin TACC para tres personas fue lo mejor de lo mejor.”</blockquote>
+        <figcaption>Reseña en Google Maps</figcaption>
+      </figure>
+
+      <figure class="q">
+        <div class="stars" data-stars role="img" aria-label="5 estrellas">★★★★★</div>
+        <blockquote>“Ayer festejamos los 15 de mi hija y todo fue excelente, desde Sonia y su grupo de trabajo hasta el DJ Facu, un fenómeno. La comida riquísima y en mucha cantidad. Sonia está en todos los detalles para que sea una noche mágica.”</blockquote>
+        <figcaption>Reseña en Google Maps</figcaption>
+      </figure>
+
+      <figure class="q">
+        <div class="stars" data-stars role="img" aria-label="5 estrellas">★★★★★</div>
+        <blockquote>“El DJ, la música y las luces, excelentes. La recepción con el barman y los mozos fue de lo mejor: atienden con buena onda y hasta se divierten bailando a lo largo del evento.”</blockquote>
+        <figcaption>Reseña en Google Maps</figcaption>
+      </figure>
+    </div>
+
+    <div class="reviews-foot">
+      <p class="reviews-note">Las reseñas se publican en Google Maps y se actualizan desde la ficha del salón.</p>
+      <a class="link-arrow" href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.655907,-58.699949,16z/data=!4m6!3m5!1s0x95bcbf9c3709fcad:0xe8053f97f3f141b1!8m2!3d-34.653281!4d-58.6951358!16s%2Fg%2F11cmmzvxqy?entry=ttu" target="_blank" rel="noopener">
+        Ver todas en Google Maps
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COTIZADOR ===================== -->
+<section class="section quote-section" id="cotizar">
+  <div class="wrap quote-grid">
+    <div class="quote-side">
+      <p class="eyebrow" data-reveal="up">Consulta</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">Contanos</span></span>
+        <span class="line"><span style="--i:1"><em>tu fecha.</em></span></span>
+      </h2>
+      <p class="lead" data-reveal="up" style="--d:140ms">
+        Te respondemos por WhatsApp con la disponibilidad y las opciones para tu fiesta.
+      </p>
+      <ul class="perks">
+        <li data-reveal="up" style="--d:0ms"><span class="ic">✦</span><span><b>Atención personalizada</b>Te acompañamos desde la primera consulta.</span></li>
+        <li data-reveal="up" style="--d:70ms"><span class="ic">✦</span><span><b>Sin compromiso</b>Consultá tranquilo, sin ningún costo.</span></li>
+        <li data-reveal="up" style="--d:140ms"><span class="ic">✦</span><span><b>Respuesta directa</b>Con tus datos ya cargados, vamos a lo importante.</span></li>
       </ul>
     </div>
 
-    <form class="lq-card" id="leadForm">
-
-      <div class="lq-step"><b>1</b> Tus datos</div>
-      <div class="lq-row">
-        <div>
-          <label class="lq-l" for="f-nombre">Nombre y apellido *</label>
-          <input class="lq-in" id="f-nombre" type="text" required placeholder="Ej: María Gómez">
+    <form class="form" id="leadForm" novalidate>
+      <div class="step"><b>1</b> Tus datos</div>
+      <div class="row">
+        <div class="field">
+          <label for="f-nombre">Nombre y apellido *</label>
+          <input id="f-nombre" name="nombre" type="text" required autocomplete="name" placeholder="Ej: María Gómez">
         </div>
-        <div>
-          <label class="lq-l" for="f-tel">Teléfono / WhatsApp *</label>
-          <input class="lq-in" id="f-tel" type="tel" required placeholder="Ej: 11 1234-5678">
+        <div class="field">
+          <label for="f-tel">Teléfono / WhatsApp *</label>
+          <input id="f-tel" name="tel" type="tel" required autocomplete="tel" placeholder="Ej: 11 1234-5678">
         </div>
-        <div class="lq-full">
-          <label class="lq-l" for="f-contacto">¿Cómo preferís que te contactemos?</label>
-          <select class="lq-in" id="f-contacto">
+        <div class="field field--full">
+          <label for="f-contacto">¿Cómo preferís que te contactemos?</label>
+          <select id="f-contacto" name="contacto">
             <option>Por WhatsApp</option>
             <option>Por llamada</option>
           </select>
         </div>
       </div>
 
-      <div class="lq-step"><b>2</b> Tu fiesta</div>
-      <div class="lq-row">
-        <div>
-          <label class="lq-l" for="f-tipo">Tipo de fiesta *</label>
-          <select class="lq-in" id="f-tipo" required>
+      <div class="step"><b>2</b> Tu fiesta</div>
+      <div class="row">
+        <div class="field">
+          <label for="f-tipo">Tipo de fiesta *</label>
+          <select id="f-tipo" name="tipo" required>
             <option value="">Elegí una opción</option>
             <option>Cumpleaños de 15</option>
             <option>Cumpleaños</option>
@@ -439,87 +1243,439 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
             <option>Otro</option>
           </select>
         </div>
-        <div>
-          <label class="lq-l" for="f-invitados">Invitados en total *</label>
-          <input class="lq-in" id="f-invitados" type="number" min="1" required placeholder="Ej: 85">
+        <div class="field">
+          <label for="f-invitados">Invitados en total *</label>
+          <input id="f-invitados" name="invitados" type="number" min="1" inputmode="numeric" required placeholder="Ej: 85">
         </div>
-        <div>
-          <label class="lq-l" for="f-fecha">Fecha estimada</label>
-          <input class="lq-in" id="f-fecha" type="date">
+        <div class="field">
+          <label for="f-fecha">Fecha estimada</label>
+          <input id="f-fecha" name="fecha" type="date">
         </div>
-        <div>
-          <label class="lq-l" for="f-presu">Presupuesto aproximado (opcional)</label>
-          <input class="lq-in" id="f-presu" type="text" placeholder="Ej: hasta $5.000.000">
+        <div class="field">
+          <label for="f-presu">Presupuesto aproximado</label>
+          <input id="f-presu" name="presupuesto" type="text" placeholder="Opcional">
+        </div>
+        <div class="field field--full">
+          <label for="f-mensaje">¿Algo que quieras contarnos?</label>
+          <textarea id="f-mensaje" name="mensaje" placeholder="Opcional: estilo de fiesta, colores, alguna idea…"></textarea>
         </div>
       </div>
 
-      <div class="lq-step"><b>3</b> ¿Qué te interesa?</div>
-      <div class="lq-pills">
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Catering completo"><span>Catering completo</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Mesa dulce"><span>Mesa dulce</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="DJ, luces y pantallas"><span>DJ, luces y pantallas</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Ambientación"><span>Ambientación</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Fotografía y video"><span>Fotografía y video</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Espejo para la recepción"><span>Espejo para la recepción</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Barra de tragos"><span>Barra de tragos</span></label>
-        <label class="lq-pill"><input type="checkbox" name="serv" value="Suite para homenajeados"><span>Suite para homenajeados</span></label>
+      <div class="step"><b>3</b> ¿Qué te interesa?</div>
+      <div class="pills">
+        <label class="pill"><input type="checkbox" name="serv" value="Catering completo"><span>Catering completo</span></label>
+        <label class="pill"><input type="checkbox" name="serv" value="Mesa dulce"><span>Mesa dulce</span></label>
+        <label class="pill"><input type="checkbox" name="serv" value="DJ, luces y pantallas"><span>DJ, luces y pantallas</span></label>
+        <label class="pill"><input type="checkbox" name="serv" value="Ambientación"><span>Ambientación</span></label>
+        <label class="pill"><input type="checkbox" name="serv" value="Fotografía y video"><span>Fotografía y video</span></label>
+        <label class="pill"><input type="checkbox" name="serv" value="Barra de tragos"><span>Barra de tragos</span></label>
+        <label class="pill"><input type="checkbox" name="serv" value="Suite para homenajeados"><span>Suite para homenajeados</span></label>
       </div>
 
-      <button class="lq-btn" type="submit">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+      <button class="submit" type="submit">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
         Enviar consulta por WhatsApp
       </button>
-      <p class="lq-note">Se va a abrir WhatsApp con tu consulta lista. Solo tenés que apretar enviar.</p>
+      <p class="form-note">Se abre WhatsApp con tu consulta escrita. Solo tenés que apretar enviar.</p>
     </form>
-
   </div>
 </section>
 
-<section class="contact" id="contacto">
+<!-- ===================== UBICACIÓN ===================== -->
+<section class="section" id="contacto">
   <div class="wrap">
-    <div class="rule"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0l3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></svg></div>
-    <h2>Visitanos o escribinos</h2>
-    <div class="cgrid">
-      <a href="tel:+5491133143561"><small>Llamanos</small><strong>11 3314-3561</strong></a>
-      <a href="https://www.instagram.com/candseventos" target="_blank" rel="noopener"><small>Instagram</small><strong>@candseventos</strong></a>
-      <a href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.655907,-58.699949,16z/data=!4m6!3m5!1s0x95bcbf9c3709fcad:0xe8053f97f3f141b1!8m2!3d-34.653281!4d-58.6951358!16s%2Fg%2F11cmmzvxqy?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener"><small>Cómo llegar</small><strong>Turquía 2689, Ituzaingó</strong></a>
+    <div class="section-head">
+      <p class="eyebrow" data-reveal="up">Ubicación</p>
+      <h2 class="lines" data-reveal="lines">
+        <span class="line"><span style="--i:0">Turquía 2689,</span></span>
+        <span class="line"><span style="--i:1"><em>Ituzaingó.</em></span></span>
+      </h2>
     </div>
-    <p style="color:var(--muted);font-size:15px">Turquía 2689, B1714 Ituzaingó, Provincia de Buenos Aires</p>
+
+    <div class="loc-grid">
+      <div>
+        <p class="lead" data-reveal="up" style="margin-bottom:26px">
+          Estamos en Ituzaingó, Provincia de Buenos Aires. Coordinamos una visita
+          para que conozcas el salón antes de reservar tu fecha.
+        </p>
+        <div class="loc-list">
+          <a href="tel:+5491133143561" data-reveal="up">
+            <small>Teléfono</small><strong>11 3314-3561</strong>
+          </a>
+          <a href="https://wa.me/5491133143561" target="_blank" rel="noopener" data-reveal="up" style="--d:60ms">
+            <small>WhatsApp</small><strong>Escribinos</strong>
+          </a>
+          <a href="https://www.instagram.com/candseventos" target="_blank" rel="noopener" data-reveal="up" style="--d:120ms">
+            <small>Instagram</small><strong>@candseventos</strong>
+          </a>
+          <a href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.655907,-58.699949,16z" target="_blank" rel="noopener" data-reveal="up" style="--d:180ms">
+            <small>Cómo llegar</small><strong>Turquía 2689, B1714</strong>
+          </a>
+        </div>
+      </div>
+
+      <div class="map-wrap">
+        <div class="map" data-reveal="mask">
+          <iframe
+            title="Mapa con la ubicación de Cand's Eventos en Turquía 2689, Ituzaingó"
+            src="https://www.google.com/maps?q=Turqu%C3%ADa%202689,%20Ituzaing%C3%B3,%20Buenos%20Aires&output=embed"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <a class="link-arrow map-link"
+           href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.655907,-58.699949,16z"
+           target="_blank" rel="noopener">
+          Abrir en Google Maps
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
-<footer class="f">
-  © Cand's Eventos · Turquía 2689, Ituzaingó
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <b>Cand's <i>Eventos</i></b>
+        <p>Salón de fiestas en Ituzaingó. Gastronomía, música, ambientación y coordinación de principio a fin.</p>
+      </div>
+      <nav class="foot-links" aria-label="Enlaces del pie">
+        <a href="#noche">La noche</a>
+        <a href="#galeria">Galería</a>
+        <a href="#espacio">El salón</a>
+        <a href="#resenas">Reseñas</a>
+        <a href="#cotizar">Consultar fecha</a>
+        <a href="tel:+5491133143561">11 3314-3561</a>
+        <a href="https://www.instagram.com/candseventos" target="_blank" rel="noopener">Instagram</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> Cand's Eventos · Turquía 2689, Ituzaingó</span>
+      <span>Hecho con cariño para noches que no se olvidan.</span>
+    </div>
+  </div>
 </footer>
 
 <a class="wa" href="https://wa.me/5491133143561" target="_blank" rel="noopener" aria-label="Escribinos por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.7 1.2 1.5 1.9 1 .9 1.9 1.2 2.2 1.3.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
+  <span>Escribinos</span>
 </a>
 
 <script>
 (function(){
-  var form = document.getElementById('leadForm');
-  var val = function(id){ return document.getElementById(id).value.trim(); };
-  var checked = function(n){
-    return Array.prototype.map.call(
-      form.querySelectorAll('input[name="'+n+'"]:checked'),
-      function(c){ return c.value; }
-    ).join(', ');
-  };
-  var fmt = function(f){
-    if(!f) return '';
-    var p = f.split('-');
-    return p[2]+'/'+p[1]+'/'+p[0];
-  };
+  'use strict';
+  var motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var reduce = motionQuery.matches;
+  var docEl = document.documentElement;
 
-  // No permitir fechas pasadas
-  document.getElementById('f-fecha').min = new Date().toISOString().split('T')[0];
+  /* ---------- NAV ---------- */
+  var nav = document.getElementById('nav');
+  var lastY = -1;
+  function onScrollNav(){
+    var y = window.scrollY;
+    if ((y > 40) !== (lastY > 40)) nav.classList.toggle('scrolled', y > 40);
+    lastY = y;
+  }
+  onScrollNav();
+
+  /* ---------- MENÚ MOBILE ---------- */
+  var burger = document.getElementById('burger');
+  var menu = document.getElementById('menu');
+  var menuBackground = [
+    document.querySelector('main'),
+    document.querySelector('.footer'),
+    document.querySelector('.wa'),
+    document.querySelector('.brand')
+  ].filter(function(el){ return !!el; });
+
+  function setMenu(open){
+    var hadFocus = document.activeElement === burger || menu.contains(document.activeElement);
+    document.body.classList.toggle('menu-open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+    menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+    document.body.style.overflow = open ? 'hidden' : '';
+    menuBackground.forEach(function(el){ el.inert = open; });
+
+    if (open) {
+      var firstLink = menu.querySelector('a');
+      if (firstLink) firstLink.focus();
+    } else if (hadFocus) {
+      if (burger.offsetParent !== null) burger.focus();
+      else {
+        var brand = document.querySelector('.brand');
+        if (brand) brand.focus();
+      }
+    }
+  }
+  burger.addEventListener('click', function(){
+    setMenu(!document.body.classList.contains('menu-open'));
+  });
+  menu.addEventListener('click', function(e){
+    if (e.target.closest('a')) setMenu(false);
+  });
+  document.addEventListener('keydown', function(e){
+    var open = document.body.classList.contains('menu-open');
+    if (e.key === 'Escape' && open) {
+      e.preventDefault();
+      setMenu(false);
+      return;
+    }
+    if (e.key !== 'Tab' || !open) return;
+
+    /* El foco queda entre el botón y los enlaces del menú abierto. */
+    var focusable = [burger].concat(Array.prototype.slice.call(menu.querySelectorAll('a')));
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    } else if (focusable.indexOf(document.activeElement) === -1) {
+      e.preventDefault();
+      first.focus();
+    }
+  });
+
+  /* ---------- REVEALS ---------- */
+  var revealEls = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.12 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- ESTRELLAS ---------- */
+  document.querySelectorAll('[data-stars]').forEach(function(box){
+    var chars = box.textContent.trim().split('');
+    box.textContent = '';
+    chars.forEach(function(ch, i){
+      var s = document.createElement('i');
+      s.textContent = ch;
+      s.style.setProperty('--s', i);
+      box.appendChild(s);
+    });
+    if (reduce) box.classList.add('in');
+    else if ('IntersectionObserver' in window) {
+      var sio = new IntersectionObserver(function(en){
+        if (en[0].isIntersecting) { box.classList.add('in'); sio.disconnect(); }
+      }, { threshold: 0.6 });
+      sio.observe(box);
+    } else box.classList.add('in');
+  });
+
+  /* ---------- MOMENTOS ACTIVOS ---------- */
+  var moments = Array.prototype.slice.call(document.querySelectorAll('[data-moment]'));
+  if ('IntersectionObserver' in window && moments.length) {
+    var mio = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) entry.target.classList.add('is-active');
+      });
+    }, { rootMargin: '-40% 0px -40% 0px', threshold: 0 });
+    moments.forEach(function(m){ mio.observe(m); });
+  }
+
+  /* ---------- GALERÍA MANUAL: FLECHAS + ARRASTRE ---------- */
+  var hstick = document.querySelector('[data-hscroller]');
+  var htrack = document.querySelector('[data-htrack]');
+  var hprev = document.querySelector('[data-hprev]');
+  var hnext = document.querySelector('[data-hnext]');
+  var gallerySyncing = false;
+
+  function galleryStep(){
+    var item = htrack && htrack.querySelector('.hitem');
+    if (!item) return 0;
+    var gap = parseFloat(window.getComputedStyle(htrack).columnGap) || 0;
+    return item.getBoundingClientRect().width + gap;
+  }
+  function syncGallery(){
+    gallerySyncing = false;
+    if (!hstick) return;
+    var maxScroll = Math.max(hstick.scrollWidth - hstick.clientWidth, 0);
+    if (hprev) hprev.disabled = hstick.scrollLeft <= 2;
+    if (hnext) hnext.disabled = hstick.scrollLeft >= maxScroll - 2;
+  }
+  function requestGallerySync(){
+    if (!gallerySyncing) {
+      gallerySyncing = true;
+      window.requestAnimationFrame(syncGallery);
+    }
+  }
+  function moveGallery(direction){
+    if (hstick) hstick.scrollBy({ left: direction * galleryStep(), behavior: reduce ? 'auto' : 'smooth' });
+  }
+
+  if (hstick && htrack) {
+    hstick.addEventListener('scroll', requestGallerySync, { passive: true });
+    window.addEventListener('resize', requestGallerySync, { passive: true });
+    if (hprev) hprev.addEventListener('click', function(){ moveGallery(-1); });
+    if (hnext) hnext.addEventListener('click', function(){ moveGallery(1); });
+
+    hstick.addEventListener('keydown', function(e){
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      moveGallery(e.key === 'ArrowRight' ? 1 : -1);
+    });
+    hstick.addEventListener('dragstart', function(e){ e.preventDefault(); });
+
+    var drag = null;
+    hstick.addEventListener('pointerdown', function(e){
+      if (e.pointerType !== 'mouse' || e.button !== 0) return;
+      drag = { id: e.pointerId, x: e.clientX, left: hstick.scrollLeft, moved: false };
+      hstick.classList.add('is-dragging');
+      hstick.setPointerCapture(e.pointerId);
+    });
+    hstick.addEventListener('pointermove', function(e){
+      if (!drag || e.pointerId !== drag.id) return;
+      var delta = e.clientX - drag.x;
+      if (!drag.moved && Math.abs(delta) < 5) return;
+      drag.moved = true;
+      hstick.scrollLeft = drag.left - delta;
+      e.preventDefault();
+    });
+    function endGalleryDrag(e){
+      if (!drag || e.pointerId !== drag.id) return;
+      drag = null;
+      hstick.classList.remove('is-dragging');
+      if (hstick.hasPointerCapture(e.pointerId)) hstick.releasePointerCapture(e.pointerId);
+      requestGallerySync();
+    }
+    hstick.addEventListener('pointerup', endGalleryDrag);
+    hstick.addEventListener('pointercancel', endGalleryDrag);
+    syncGallery();
+  }
+
+  /* ---------- PARALLAX (un solo rAF) ---------- */
+  var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]')).map(function(el){
+    return { el: el, speed: parseFloat(el.getAttribute('data-parallax')) || 0, visible: true };
+  });
+  var ballWrap = document.querySelector('.ball-wrap');
+  var heroImg = document.querySelector('.hero-media img');
+  var ticking = false;
+  var vh = window.innerHeight;
+
+  function update(){
+    ticking = false;
+    onScrollNav();
+    vh = window.innerHeight;
+
+    if (!reduce) {
+      /* Parallax */
+      for (var i = 0; i < parallaxEls.length; i++) {
+        var o = parallaxEls[i];
+        var r = o.el.getBoundingClientRect();
+        if (r.bottom < -240 || r.top > vh + 240) continue;
+        var progress = (r.top + r.height / 2 - vh / 2) / vh;   /* -1 … 1 aprox */
+        var y = -progress * o.speed * 100;
+        var scale = o.el.classList.contains('ball-wrap') ? 1 : 1.12;
+        o.el.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)' + (scale !== 1 ? ' scale(' + scale + ')' : '');
+      }
+
+      /* Bola: se aleja al hacer scroll */
+      if (ballWrap) {
+        var bp = Math.min(Math.max(window.scrollY / vh, 0), 1);
+        ballWrap.style.opacity = String(1 - bp * 0.85);
+      }
+
+    }
+  }
+
+  function onScroll(){
+    if (!ticking) { ticking = true; window.requestAnimationFrame(update); }
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', function(){
+    if (window.innerWidth > 860 && document.body.classList.contains('menu-open')) setMenu(false);
+    if (heroImg) heroImg.style.transform = '';
+    onScroll();
+  }, { passive: true });
+
+  function onMotionChange(e){
+    reduce = e.matches;
+    if (reduce) {
+      parallaxEls.forEach(function(o){ o.el.style.transform = ''; });
+      if (ballWrap) ballWrap.style.opacity = '';
+    }
+    onScroll();
+  }
+  if (motionQuery.addEventListener) motionQuery.addEventListener('change', onMotionChange);
+  else if (motionQuery.addListener) motionQuery.addListener(onMotionChange);
+
+  /* ---------- FORMULARIO → WHATSAPP ---------- */
+  var form = document.getElementById('leadForm');
+  var fecha = document.getElementById('f-fecha');
+  function updateDateMin(){
+    var today = new Date();
+    var iso = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    if (fecha) fecha.min = iso;
+    return iso;
+  }
+  updateDateMin();
+
+  function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+  function fmtDate(v){
+    if (!v) return '';
+    var p = v.split('-');
+    return p[2] + '/' + p[1] + '/' + p[0];
+  }
 
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    var iso = updateDateMin();
+    var controls = Array.prototype.slice.call(form.querySelectorAll('input,select,textarea'));
+    controls.forEach(function(el){ el.setCustomValidity(''); });
+
+    if (!val('f-nombre')) document.getElementById('f-nombre').setCustomValidity('Ingresá tu nombre y apellido.');
+    if (!val('f-tel')) document.getElementById('f-tel').setCustomValidity('Ingresá un teléfono o WhatsApp.');
+    if (!val('f-tipo')) document.getElementById('f-tipo').setCustomValidity('Elegí un tipo de fiesta.');
+
+    var invitadosValor = val('f-invitados');
+    var invitadosNumero = Number(invitadosValor);
+    if (!invitadosValor) {
+      document.getElementById('f-invitados').setCustomValidity('Ingresá la cantidad de invitados.');
+    } else if (!isFinite(invitadosNumero) || invitadosNumero < 1 || Math.floor(invitadosNumero) !== invitadosNumero) {
+      document.getElementById('f-invitados').setCustomValidity('Ingresá un número entero de invitados mayor o igual a 1.');
+    }
+    if (val('f-fecha') && iso && val('f-fecha') < iso) {
+      fecha.setCustomValidity('La fecha no puede ser anterior a hoy.');
+    }
+
+    var invalid = Array.prototype.slice.call(form.querySelectorAll(':invalid'));
+    if (invalid.length) {
+      invalid.forEach(function(el){
+        el.style.borderColor = '#d98b7a';
+        var clear = function(){ el.style.borderColor = ''; el.setCustomValidity(''); };
+        el.addEventListener('input', clear, { once: true });
+        el.addEventListener('change', clear, { once: true });
+      });
+      var first = invalid[0];
+      first.focus();
+      first.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+      form.reportValidity();
+      return;
+    }
+
+    var servicios = Array.prototype.map.call(
+      form.querySelectorAll('input[name="serv"]:checked'),
+      function(c){ return c.value; }
+    ).join(', ');
 
     var lineas = [
-      'Hola Cand\'s Eventos! Quiero consultar por una fiesta desde la web.',
+      "Hola Cand's Eventos! Quiero consultar por una fiesta desde la web.",
       '',
       '*DATOS DE CONTACTO*',
       '*Nombre:* ' + val('f-nombre'),
@@ -529,88 +1685,23 @@ footer.f{text-align:center;padding:34px 24px;color:var(--muted);font-size:14px;b
       '*LA FIESTA*',
       '*Tipo:* ' + val('f-tipo'),
       '*Invitados en total:* ' + val('f-invitados'),
-      '*Fecha estimada:* ' + (fmt(val('f-fecha')) || 'A definir'),
+      '*Fecha estimada:* ' + (fmtDate(val('f-fecha')) || 'A definir'),
       '*Presupuesto:* ' + (val('f-presu') || 'No indicado'),
       '',
-      '*Servicios de interés:* ' + (checked('serv') || 'No indicó')
+      '*Servicios de interés:* ' + (servicios || 'No indicó'),
+      '*Mensaje:* ' + (val('f-mensaje') || '—')
     ];
 
-    var url = 'https://wa.me/5491133143561?text=' + encodeURIComponent(lineas.join('\n'));
-    window.open(url, '_blank');
-  });
-})();
-
-// Destellos dorados de la portada
-(function(){
-  var box = document.getElementById('sparkles');
-  if(!box) return;
-  for(var i = 0; i < 45; i++){
-    var s = document.createElement('span');
-    s.className = 'sp';
-    var size = 3 + Math.random() * 7;
-    s.style.cssText = 'left:' + (Math.random() * 100) + '%;top:' + (Math.random() * 100) + '%;width:' + size + 'px;height:' + size + 'px;--d:' + (3 + Math.random() * 4) + 's;--t:' + (Math.random() * 6) + 's';
-    box.appendChild(s);
-  }
-})();
-
-// Fotos que sobresalen: 0.6 s con el cursor en PC, mantener apretado en celular
-(function(){
-  var HOVER_DELAY = 600;  // PC: milisegundos con el cursor quieto encima
-  var HOLD_DELAY  = 350;  // Celular: milisegundos manteniendo apretado
-  var MOVE_TOL    = 10;   // Celular: si el dedo se mueve más que esto (scroll), se cancela
-
-  var figs = document.querySelectorAll('.gal figure');
-  var lastType = 'mouse';
-
-  figs.forEach(function(fig){
-    var timer = null, sx = 0, sy = 0;
-
-    function on(){ fig.classList.add('pop'); }
-    function off(){ clearTimeout(timer); timer = null; fig.classList.remove('pop'); }
-
-    // PC: el efecto aparece solo si el cursor se queda quieto el tiempo indicado
-    fig.addEventListener('pointerenter', function(e){
-      lastType = e.pointerType;
-      if(e.pointerType !== 'mouse') return;
-      clearTimeout(timer);
-      timer = setTimeout(on, HOVER_DELAY);
-    });
-    fig.addEventListener('pointerleave', function(e){
-      if(e.pointerType === 'mouse') off();
-    });
-
-    // Celular: el efecto aparece al mantener apretado
-    fig.addEventListener('pointerdown', function(e){
-      lastType = e.pointerType;
-      if(e.pointerType === 'mouse') return;
-      sx = e.clientX; sy = e.clientY;
-      clearTimeout(timer);
-      timer = setTimeout(on, HOLD_DELAY);
-    });
-    fig.addEventListener('pointermove', function(e){
-      if(e.pointerType === 'mouse' || !timer) return;
-      if(Math.abs(e.clientX - sx) > MOVE_TOL || Math.abs(e.clientY - sy) > MOVE_TOL){
-        clearTimeout(timer); timer = null;
-      }
-    });
-    ['pointerup','pointercancel'].forEach(function(ev){
-      fig.addEventListener(ev, function(e){
-        if(e.pointerType !== 'mouse') off();
-      });
-    });
-
-    // Evita el menú de "guardar imagen" al mantener apretado en el celular
-    fig.addEventListener('contextmenu', function(e){
-      if(lastType !== 'mouse') e.preventDefault();
-    });
+    window.open('https://wa.me/5491133143561?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
   });
 
-  // Tocar fuera de una foto la devuelve a la normalidad
-  document.addEventListener('pointerdown', function(e){
-    figs.forEach(function(f){
-      if(!f.contains(e.target)) f.classList.remove('pop');
-    });
-  });
+  /* ---------- AÑO ---------- */
+  var y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  /* ---------- INIT ---------- */
+  update();
+  window.addEventListener('load', update);
 })();
 </script>
 </body>
