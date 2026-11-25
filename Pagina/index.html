@@ -661,13 +661,13 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
 /* ============================================================
    16. LOADER DE MARCA
    ============================================================ */
-.js body.is-loading{overflow:hidden}
+.js body.is-loading{overflow:hidden;background:var(--violet)}
+.js body.is-loading > :not(.page-loader):not(script){visibility:hidden}
 .page-loader{
   position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
-  background:transparent;opacity:1;transition:opacity .35s var(--ease);
+  background:var(--violet);opacity:1;transition:opacity .35s var(--ease);
 }
 .js body.is-loading .page-loader{display:flex}
-.js body.is-loading .wa{visibility:hidden}
 .page-loader.is-done{opacity:0;pointer-events:none}
 .page-loader__logo{
   display:block;width:clamp(280px,58vw,620px);max-width:84vw;height:auto;overflow:visible;
@@ -946,17 +946,17 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
     status.textContent = 'Contenido cargado';
     loader.classList.add('is-done');
     loader.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('is-loading');
-    background.forEach(function(el){ el.inert = false; });
-
-    if (loader.contains(document.activeElement)) {
-      var brand = document.querySelector('.brand');
-      if (brand) brand.focus();
-    }
+    var restoreFocus = loader.contains(document.activeElement);
     loader.inert = true;
     removeTimer = window.setTimeout(function(){
       cleanup();
       loader.remove();
+      document.body.classList.remove('is-loading');
+      background.forEach(function(el){ el.inert = false; });
+      if (restoreFocus) {
+        var brand = document.querySelector('.brand');
+        if (brand) brand.focus();
+      }
     }, reduce ? 0 : 350);
   }
 
