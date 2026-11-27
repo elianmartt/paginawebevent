@@ -533,6 +533,16 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
 .stars{display:flex;gap:3px;color:var(--gold);font-size:12px}
 .stars i{font-style:normal;opacity:0;transform:scale(.5);display:inline-block}
 .stars.in i{opacity:1;transform:none;transition:opacity .5s var(--ease),transform .6s var(--ease);transition-delay:calc(var(--s,0) * 90ms)}
+.reviews-reputation{
+  grid-column:2;display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+  width:fit-content;padding-top:4px;
+}
+.reputation-score{display:flex;align-items:baseline;gap:9px;color:var(--gold-lit);line-height:1;white-space:nowrap}
+.reputation-star{align-self:center;color:var(--gold);font-size:20px;transform:translateY(-1px)}
+.reputation-score strong{font-family:var(--serif);font-size:clamp(38px,3vw,48px);font-weight:500;letter-spacing:-.03em}
+.reputation-scale{font-family:var(--serif);font-size:20px;color:var(--muted)}
+.reputation-count{padding-left:18px;border-left:1px solid var(--line);color:var(--muted);font-size:13.5px;line-height:1.5}
+.reputation-count strong{color:var(--ink);font-weight:500}
 .reviews-foot{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:clamp(32px,5vh,52px)}
 .reviews-note{font-size:15px;color:var(--muted);line-height:1.7;max-width:44ch;text-wrap:pretty}
 .link-arrow{
@@ -686,8 +696,9 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
    ============================================================ */
 @media (max-width:1080px){
   .section-head{grid-template-columns:1fr;row-gap:16px}
-  .section-head h2,.section-head .lead{grid-column:1}
+  .section-head h2,.section-head .lead,.reviews-reputation{grid-column:1}
   .section-head .lead{padding-bottom:0}
+  .reviews-reputation{margin-top:8px}
   .venue-grid figure{position:static}
   .manifesto{grid-template-columns:1fr;gap:44px}
   .manifesto-media{max-width:520px}
@@ -729,6 +740,8 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
   .courses li{grid-template-columns:32px 1fr;gap:14px}
   .courses .c-tag{display:none}
   .q{padding:28px 22px}
+  .reviews-reputation{gap:10px}
+  .reputation-count{width:100%;padding-left:0;border-left:0}
   .map{height:clamp(320px,90vw,420px)}
   .moment{grid-template-columns:1fr}
   .m-media,.m-body,.moment:nth-child(even) .m-media,.moment:nth-child(even) .m-body{grid-column:1}
@@ -1411,6 +1424,16 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
       <p class="lead" data-reveal="up" style="--d:140ms">
         Reseñas reales de Google Maps, escritas por quienes ya vivieron su noche acá.
       </p>
+      <!-- Datos verificados en Google Maps el 26/11/2026.
+           Para actualizarlos, cambiá solo el contenido de #google-rating y #google-review-count. -->
+      <div class="reviews-reputation" data-reveal="up" style="--d:210ms" role="group" aria-label="Reputación en Google Maps">
+        <p class="reputation-score">
+          <span class="reputation-star" aria-hidden="true">★</span>
+          <strong id="google-rating">4,8</strong>
+          <span class="reputation-scale">/ 5</span>
+        </p>
+        <p class="reputation-count"><strong id="google-review-count">413</strong> opiniones en Google</p>
+      </div>
     </div>
 
     <div class="quotes">
