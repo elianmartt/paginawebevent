@@ -328,24 +328,9 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
 .scroll-cue{display:flex;align-items:center;gap:11px;font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--dim)}
 .scroll-cue i{display:block;width:1px;height:34px;background:linear-gradient(var(--gold),transparent);animation:cue 2.4s var(--ease) infinite}
 
-/* Bola de espejos: sale del borde superior y se mueve con el scroll */
-.ball-wrap{
-  position:absolute;top:calc(env(safe-area-inset-top,0px) + 74px);right:clamp(16px,7vw,120px);z-index:1;
-  width:clamp(66px,8.5vw,112px);display:flex;flex-direction:column;align-items:center;
-  pointer-events:none;will-change:transform;
-}
-.ball-wire{width:1px;height:clamp(34px,9vh,96px);background:linear-gradient(rgba(217,184,119,0),rgba(217,184,119,.45))}
-.ball-img{
-  width:100%;height:auto;display:block;
-  filter:drop-shadow(0 0 26px rgba(150,140,255,.34));
-  transform-origin:50% -40%;
-  animation:sway 16s ease-in-out infinite alternate;
-}
-
 @keyframes lineIn{to{opacity:1;transform:none}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes sway{from{transform:rotate(-1.7deg)}to{transform:rotate(1.7deg)}}
 @keyframes cue{0%,100%{transform:scaleY(.4);opacity:.4;transform-origin:top}50%{transform:scaleY(1);opacity:1;transform-origin:top}}
 
 /* ============================================================
@@ -733,8 +718,6 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
   .scroll-cue{display:none}
   .hero-facts{font-size:11px;gap:6px 16px}
   .instagram-cta{width:calc(100% - 40px);max-width:360px;min-height:48px;padding:12px 16px}
-  .ball-wrap{width:74px;right:14px}
-  .ball-wire{height:52px}
   .row{grid-template-columns:1fr}
   .specs>div{grid-template-columns:1fr;gap:6px}
   .courses li{grid-template-columns:32px 1fr;gap:14px}
@@ -783,9 +766,8 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
   .js [data-reveal],.js [data-reveal="mask"]>*,.js .lines .line>span,.hero .eyebrow,.hero p.sub,.hero-actions,.hero-foot,.hero h1 .line>span{
     opacity:1!important;transform:none!important;clip-path:none!important;
   }
-  .hero-media img,.ph img,.ball-wrap{transform:none!important}
+  .hero-media img,.ph img{transform:none!important}
   .marquee-track{animation:none!important}
-  .ball-img{animation:none!important}
   .hstick{scroll-behavior:auto}
 }
 </style>
@@ -1047,11 +1029,6 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
   <div class="hero-media">
     <img src="salon2.webp" alt="Salón de Cand's Eventos iluminado en violeta durante una fiesta de 15"
          width="1600" height="979" fetchpriority="high" decoding="async" data-parallax=".06">
-  </div>
-
-  <div class="ball-wrap" aria-hidden="true" data-parallax="-.09">
-    <span class="ball-wire"></span>
-    <img class="ball-img" src="ball.png" alt="" width="240" height="240" decoding="async">
   </div>
 
   <div class="wrap hero-inner">
@@ -1847,7 +1824,6 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
   var parallaxEls = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]')).map(function(el){
     return { el: el, speed: parseFloat(el.getAttribute('data-parallax')) || 0, visible: true };
   });
-  var ballWrap = document.querySelector('.ball-wrap');
   var heroImg = document.querySelector('.hero-media img');
   var ticking = false;
   var vh = window.innerHeight;
@@ -1865,16 +1841,9 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
         if (r.bottom < -240 || r.top > vh + 240) continue;
         var progress = (r.top + r.height / 2 - vh / 2) / vh;   /* -1 … 1 aprox */
         var y = -progress * o.speed * 100;
-        var scale = o.el.classList.contains('ball-wrap') ? 1 : (o.el === heroImg ? 1.12 : 1.06);
-        o.el.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0)' + (scale !== 1 ? ' scale(' + scale + ')' : '');
+        var scale = o.el === heroImg ? 1.12 : 1.06;
+        o.el.style.transform = 'translate3d(0,' + y.toFixed(2) + 'px,0) scale(' + scale + ')';
       }
-
-      /* Bola: se aleja al hacer scroll */
-      if (ballWrap) {
-        var bp = Math.min(Math.max(window.scrollY / vh, 0), 1);
-        ballWrap.style.opacity = String(1 - bp * 0.85);
-      }
-
     }
   }
 
@@ -1893,7 +1862,6 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
     reduce = e.matches;
     if (reduce) {
       parallaxEls.forEach(function(o){ o.el.style.transform = ''; });
-      if (ballWrap) ballWrap.style.opacity = '';
     }
     onScroll();
   }
