@@ -585,18 +585,6 @@ body.menu-open .menu a{opacity:1;transform:none;transition-delay:calc(var(--i,0)
 }
 .field input:user-invalid{border-color:#d98b7a}
 
-.pills{display:flex;flex-wrap:wrap;gap:8px}
-.pill{position:relative}
-.pill input{position:absolute;opacity:0;width:0;height:0}
-.pill span{
-  display:inline-block;padding:9px 15px;border-radius:100px;border:1px solid rgba(243,238,228,.14);
-  font-size:12.5px;color:#c5becf;cursor:pointer;
-  transition:background .3s var(--ease),border-color .3s var(--ease),color .3s var(--ease);
-}
-.pill span:hover{border-color:var(--line);color:var(--ink)}
-.pill input:checked+span{background:var(--gold);border-color:var(--gold);color:#150f06;font-weight:500}
-.pill input:focus-visible+span{outline:2px solid var(--gold-lit);outline-offset:3px}
-
 .submit{
   display:flex;align-items:center;justify-content:center;gap:10px;width:100%;
   padding:16px 26px;border:0;border-radius:100px;cursor:pointer;
@@ -1479,13 +1467,6 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
           <label for="f-tel">Teléfono / WhatsApp *</label>
           <input id="f-tel" name="tel" type="tel" required autocomplete="tel" placeholder="Ej: 11 1234-5678">
         </div>
-        <div class="field field--full">
-          <label for="f-contacto">¿Cómo preferís que te contactemos?</label>
-          <select id="f-contacto" name="contacto">
-            <option>Por WhatsApp</option>
-            <option>Por llamada</option>
-          </select>
-        </div>
       </div>
 
       <div class="step"><b>2</b> Tu fiesta</div>
@@ -1507,29 +1488,14 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
           <label for="f-invitados">Invitados en total *</label>
           <input id="f-invitados" name="invitados" type="number" min="1" inputmode="numeric" required placeholder="Ej: 85">
         </div>
-        <div class="field">
+        <div class="field field--full">
           <label for="f-fecha">Fecha estimada</label>
           <input id="f-fecha" name="fecha" type="date">
-        </div>
-        <div class="field">
-          <label for="f-presu">Presupuesto aproximado</label>
-          <input id="f-presu" name="presupuesto" type="text" placeholder="Opcional">
         </div>
         <div class="field field--full">
           <label for="f-mensaje">¿Algo que quieras contarnos?</label>
           <textarea id="f-mensaje" name="mensaje" placeholder="Opcional: estilo de fiesta, colores, alguna idea…"></textarea>
         </div>
-      </div>
-
-      <div class="step"><b>3</b> ¿Qué te interesa?</div>
-      <div class="pills">
-        <label class="pill"><input type="checkbox" name="serv" value="Catering completo"><span>Catering completo</span></label>
-        <label class="pill"><input type="checkbox" name="serv" value="Mesa dulce"><span>Mesa dulce</span></label>
-        <label class="pill"><input type="checkbox" name="serv" value="DJ, luces y pantallas"><span>DJ, luces y pantallas</span></label>
-        <label class="pill"><input type="checkbox" name="serv" value="Ambientación"><span>Ambientación</span></label>
-        <label class="pill"><input type="checkbox" name="serv" value="Fotografía y video"><span>Fotografía y video</span></label>
-        <label class="pill"><input type="checkbox" name="serv" value="Barra de tragos"><span>Barra de tragos</span></label>
-        <label class="pill"><input type="checkbox" name="serv" value="Suite para homenajeados"><span>Suite para homenajeados</span></label>
       </div>
 
       <button class="submit" type="submit">
@@ -1578,6 +1544,9 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
           <a href="https://www.google.com/maps/place/Cands+Eventos+%5BSal%C3%B3n+de+Fiestas%5D/@-34.653281,-58.6951358,17z/data=!4m6!3m5!1s0x95bcbf9c3709fcad:0xe8053f97f3f141b1!8m2!3d-34.653281!4d-58.6951358!16s%2Fg%2F11cmmzvxqy" target="_blank" rel="noopener" data-reveal="up" style="--d:180ms">
             <small>Cómo llegar</small><strong>Turquía 2689, B1714</strong>
           </a>
+          <div data-reveal="up" style="--d:240ms">
+            <small>Visitas al salón</small><strong>Lunes a jueves de 17:00 a 20:00 hs (con cita previa).</strong>
+          </div>
         </div>
       </div>
 
@@ -1923,28 +1892,20 @@ html:not(.js) .hstick::-webkit-scrollbar{display:block}
       return;
     }
 
-    var servicios = Array.prototype.map.call(
-      form.querySelectorAll('input[name="serv"]:checked'),
-      function(c){ return c.value; }
-    ).join(', ');
-
     var lineas = [
       "Hola Cand's Eventos! Quiero consultar por una fiesta desde la web.",
       '',
       '*DATOS DE CONTACTO*',
       '*Nombre:* ' + val('f-nombre'),
       '*Teléfono:* ' + val('f-tel'),
-      '*Prefiere contacto:* ' + val('f-contacto'),
       '',
       '*LA FIESTA*',
       '*Tipo:* ' + val('f-tipo'),
       '*Invitados en total:* ' + val('f-invitados'),
-      '*Fecha estimada:* ' + (fmtDate(val('f-fecha')) || 'A definir'),
-      '*Presupuesto:* ' + (val('f-presu') || 'No indicado'),
-      '',
-      '*Servicios de interés:* ' + (servicios || 'No indicó'),
-      '*Mensaje:* ' + (val('f-mensaje') || '—')
+      '*Fecha estimada:* ' + (fmtDate(val('f-fecha')) || 'A definir')
     ];
+    var mensaje = val('f-mensaje');
+    if (mensaje) lineas.push('*Mensaje:* ' + mensaje);
 
     window.open('https://wa.me/5491133143561?text=' + encodeURIComponent(lineas.join('\n')), '_blank', 'noopener');
   });
